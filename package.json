@@ -1,0 +1,19 @@
+{
+  "name": "venga-rent-a-car",
+  "version": "1.0.0",
+  "description": "Venga Rent a Car web sitesi",
+  "main": "index.html",
+  "scripts": {
+    "start": "live-server --port=3001 --no-browser --watch=*.html,assets/**/* --no-css-inject --ignore=node_modules",
+    "dev": "live-server --port=3001 --no-browser --watch=*.html,assets/**/* --entry-file=index.html --mount=/components:./components --no-css-inject --ignore=node_modules --host=localhost --wait=0"
+  },
+  "keywords": [
+    "rent-a-car",
+    "araç kiralama"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+} 
