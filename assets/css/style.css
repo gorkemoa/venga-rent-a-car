@@ -1260,7 +1260,7 @@ h3 { font-size: var(--h3-size); }
 /* Footer Styles */
 .footer {
   background-color: var(--secondary-color);
-  background-image: url('../img/white-offroader-jeep-parking.jpg');
+  background-image: url('../img/footer.bg.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
