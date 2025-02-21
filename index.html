@@ -71,10 +71,44 @@
       <div class="after-hours-content">
         <div class="after-hours-left">
           <h2>KAMPANYA !</h2>
-          <div class="highlight-text">YAZ TATİLİ</div>
+          <div class="highlight-text" style="white-space: nowrap; font-size: 20px;" >Venga Rent A Car</div>
         </div>
         <div class="after-hours-center">
-          <p>Yaz tatili için 10 günlük kiralama için %20 indirim. 10 günden fazla kiralama için %30 indirim.</p>
+          <div class="campaign-slider">
+            <p class="campaign-slide fade">Yaz tatili için 10 günlük kiralama için %20 indirim.</p>
+            <p class="campaign-slide fade">Kurban Bayramı için 10 günlük kiralama için %20 indirim.</p>
+            <p class="campaign-slide fade">Ramazan Bayramı için 10 günlük kiralama için %20 indirim.</p>
+            <p class="campaign-slide fade">Yıla hoş bir kampanya için 10 günlük kiralama için %20 indirim.</p>
+        </div>
+          <style>
+            .campaign-slider {
+              position: relative;
+            }
+            .campaign-slide {
+              display: none;
+              animation: fade 2s ease-in-out infinite;
+            }
+            .fade {
+              animation: fade 2s ease-in-out infinite;
+            }
+            @keyframes fade {
+              0%, 100% { opacity: 0; }
+              50% { opacity: 1; }
+            }
+            .campaign-slide:first-child {
+              display: block;
+            }
+          </style>
+          <script>
+            const slides = document.querySelectorAll('.campaign-slide');
+            let currentSlide = 0;
+            
+            setInterval(() => {
+              slides[currentSlide].style.display = 'none';
+              currentSlide = (currentSlide + 1) % slides.length;
+              slides[currentSlide].style.display = 'block';
+            }, 4000);
+          </script>
         </div>
         <div class="key-image-container">
           <img src="assets/img/anahtar.png" alt="Car Key" class="key-image">
@@ -286,7 +320,7 @@
           <div class="card-content">
             <h2>Detaylı Bilgiye İhtiyacım Var</h2>
             <p>Uzman ekibimizle size en iyi teklifleri sunuyoruz.Sizin için en iyi araba seçeneklerini bulup size sunuyoruz.</p>
-            <a href="#" class="search-button">
+            <a href="#" class="search-button" style="background-color:var(--secondary-color);">
               Araçları Bul
               <i class="fas fa-search"></i>
             </a>
