@@ -75,6 +75,5 @@ Bu proje ISC lisansı altında lisanslanmıştır. Daha fazla bilgi için [LICEN
 
 ## 📞 İletişim
 
-Venga Rent a Car - [@vengarentacar](https://twitter.com/vengarentacar)
-
-Proje Linki: [https://github.com/your-username/venga-rent-a-car](https://github.com/your-username/venga-rent-a-car) 
+Email : gorkemoa35@gmail.com
+Proje Linki: [https://github.com/gorkemoa/venga-rent-a-car](https://github.com/your-username/venga-rent-a-car) 
