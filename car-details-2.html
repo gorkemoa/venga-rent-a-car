@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ford Tourneo Courier kiralama - Ekonomik ve konforlu aile aracı. Günlük ₺750'den başlayan fiyatlarla güvenli ve kaliteli araç kiralama hizmeti.">
+    <meta name="keywords" content="Ford Tourneo Courier kiralama, araç kiralama, rent a car, ekonomik araç, aile aracı">
+    <meta name="author" content="Venga Rent A Car">
+    <meta property="og:title" content="Ford Tourneo Courier - Venga Rent A Car">
+    <meta property="og:description" content="Ekonomik ve konforlu Ford Tourneo Courier kiralama. Günlük ₺750'den başlayan fiyatlarla.">
+    <meta property="og:image" content="https://s3.eu-central-1.amazonaws.com/uvpictures-eu-central-1/1280/SP/TR/FORD-TOURNEO-COURIER-12115_1.JPG">
+    
+    <title>Ford Tourneo Courier - Venga Rent A Car</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    .car-details-modern {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+/* Hero Section */
+.car-hero {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 60px 0;
+    margin-bottom: 40px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.car-hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.car-hero-text {
+    max-width: 800px;
+}
+
+.car-category {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(255, 77, 0, 0.2);
+}
+
+.car-hero h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.car-price {
+    display: inline-flex;
+    flex-direction: column;
+    background: white;
+    padding: 20px 30px;
+    border-radius: 15px;
+}
+
+.price-tag {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.price-amount {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.price-period {
+    font-size: 18px;
+    color: #666;
+}
+
+.price-note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Gallery Section */
+.car-gallery {
+    padding: 40px 0;
+}
+
+.gallery-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.gallery-main {
+    margin-bottom: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gallery-main img:hover {
+    transform: scale(1.02);
+}
+
+.gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+}
+
+.thumb {
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.thumb:hover {
+    transform: translateY(-5px);
+}
+
+.thumb img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+}
+
+.thumb.active {
+    border: 3px solid var(--primary-color);
+}
+
+/* Features Section */
+.car-features {
+    padding: 60px 0;
+    background: white;
+}
+
+.features-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 32px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.feature-card h3 {
+    font-size: 18px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Description Section */
+.car-description {
+    padding: 60px 0;
+    background: #f8f9fa;
+}
+
+.description-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+}
+
+.description-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.description-content h2 {
+    font-size: 32px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.description-content p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.highlights {
+    margin-top: 40px;
+}
+
+.highlights h3 {
+    font-size: 24px;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+}
+
+.highlights-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+}
+
+.highlights-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    color: #666;
+}
+
+.highlights-list li i {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+/* Booking Form */
+.booking-form {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 20px;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-header h2 {
+    font-size: 28px;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.form-header p {
+    font-size: 16px;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    color: var(--secondary-color);
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 77, 0, 0.1);
+    outline: none;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 16px;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-submit:hover {
+    background: #e63900;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(255, 77, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .description-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .booking-form {
+        position: static;
+    }
+}
+
+@media (max-width: 768px) {
+    .car-hero h1 {
+        font-size: 36px;
+    }
+
+    .gallery-main img {
+        height: 400px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .highlights-list {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .car-hero {
+        padding: 40px 0;
+    }
+
+    .car-price {
+        width: 100%;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-thumbs {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Sahibinden.com Style Car Details */
+.car-details-sahibinden {
+    background-color: #f3f3f3;
+    padding: 20px 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Listing Header */
+.listing-header {
+    background: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.listing-title h1 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.listing-meta {
+    display: flex;
+    gap: 20px;
+    color: #666;
+    font-size: 13px;
+}
+
+.listing-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-favorite,
+.btn-share,
+.btn-print {
+    padding: 8px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background: #fff;
+    color: #333;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.btn-favorite:hover,
+.btn-share:hover,
+.btn-print:hover {
+    background: #f5f5f5;
+}
+
+/* Main Grid Layout */
+.listing-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 20px;
+}
+
+/* Left Column */
+.listing-left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Gallery */
+.listing-gallery {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.gallery-main {
+    position: relative;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.gallery-main img {
+    width: 100%;
+    height: 500px;
+    object-fit: contain;
+    background: #f8f8f8;
+}
+
+.gallery-counter {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.gallery-thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+}
+
+.thumb {
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.thumb.active {
+    border-color: #ff0000;
+}
+
+.thumb img {
+    width: 100%;
+    height: 75px;
+    object-fit: cover;
+}
+
+/* Details Section */
+.listing-details {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.listing-details h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-label {
+    font-size: 13px;
+    color: #666;
+}
+
+.detail-value {
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Description Section */
+.listing-description {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.listing-description h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.description-content p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Equipment Section */
+.listing-equipment {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.listing-equipment h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.equipment-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.equipment-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: #333;
+}
+
+.equipment-item i {
+    color: #4CAF50;
+    font-size: 16px;
+}
+
+/* Right Column */
+.listing-right {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Price Card */
+.price-card {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.price-header {
+    margin-bottom: 10px;
+}
+
+.price-amount {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff0000;
+}
+
+.price-period {
+    font-size: 16px;
+    color: #666;
+}
+
+.price-note {
+    font-size: 12px;
+    color: #666;
+}
+
+/* Contact Card */
+.contact-card {
+    background: #fff;
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.contact-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-header h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.contact-header p {
+    font-size: 14px;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #ff0000;
+    outline: none;
+}
+
+.btn-contact {
+    width: 100%;
+    padding: 12px;
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.2s ease;
+}
+
+.btn-contact:hover {
+    background: #e60000;
+}
+
+/* Security Notice */
+.security-notice {
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.security-notice i {
+    color: #856404;
+    font-size: 18px;
+}
+
+.security-notice p {
+    font-size: 13px;
+    color: #856404;
+    line-height: 1.4;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .listing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .listing-right {
+        order: -1;
+    }
+}
+
+@media (max-width: 768px) {
+    .listing-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .listing-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .gallery-main img {
+        height: 300px;
+    }
+
+    .details-grid,
+    .equipment-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 480px) {
+    .listing-meta {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .btn-favorite span,
+    .btn-share span,
+    .btn-print span {
+        display: none;
+    }
+}
+
+</style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main class="car-details-sahibinden">
+        <div class="container">
+            <!-- Üst Başlık Bölümü -->
+            <div class="listing-header">
+                <div class="listing-title">
+                    <h1>Ford Tourneo Courier 1.5 TDCi Deluxe</h1>
+                </div>
+            </div>
+
+            <!-- Ana İçerik Grid -->
+            <div class="listing-grid">
+                <!-- Sol Kolon -->
+                <div class="listing-left">
+                    <!-- Galeri -->
+                    <div class="listing-gallery">
+                        <div class="gallery-main">
+                            <img src="https://s3.eu-central-1.amazonaws.com/uvpictures-eu-central-1/1280/SP/TR/FORD-TOURNEO-COURIER-12115_1.JPG" 
+                                 alt="Ford Tourneo Courier" 
+                                 id="mainImage">
+                            <div class="gallery-counter">
+                                <i class="fas fa-camera"></i>
+                                <span>1/3</span>
+                            </div>
+                        </div>
+                        <div class="gallery-thumbs">
+                            <div class="thumb active" data-img="https://s3.eu-central-1.amazonaws.com/uvpictures-eu-central-1/1280/SP/TR/FORD-TOURNEO-COURIER-12115_1.JPG">
+                                <img src="https://s3.eu-central-1.amazonaws.com/uvpictures-eu-central-1/1280/SP/TR/FORD-TOURNEO-COURIER-12115_1.JPG" alt="Ön Görünüm">
+                            </div>
+                            <div class="thumb" data-img="https://www.tanoto2.com.tr/cmsfiles/vehicles/2359/large/ford-tourneo-courier-1-5-tdci-deluxe-100hp-2.webp">
+                                <img src="https://www.tanoto2.com.tr/cmsfiles/vehicles/2359/large/ford-tourneo-courier-1-5-tdci-deluxe-100hp-2.webp" alt="İç Mekan">
+                            </div>
+                            <div class="thumb" data-img="https://cdn.cetas.com.tr/Delivery/Public/Image/-1x-1/1729579532067_carstudio-4.jpeg">
+                                <img src="https://cdn.cetas.com.tr/Delivery/Public/Image/-1x-1/1729579532067_carstudio-4.jpeg" alt="Arka Görünüm">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Özellikler -->
+                    <div class="listing-details">
+                        <h2>Araç Bilgileri</h2>
+                        <div class="details-grid">
+                            <div class="detail-item">
+                                <span class="detail-label">Marka</span>
+                                <span class="detail-value">Ford</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Model</span>
+                                <span class="detail-value">Tourneo Courier</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Yıl</span>
+                                <span class="detail-value">2023</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kilometre</span>
+                                <span class="detail-value">25.000</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Yakıt</span>
+                                <span class="detail-value">Dizel</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Vites</span>
+                                <span class="detail-value">Manuel</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Motor Gücü</span>
+                                <span class="detail-value">95 HP</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Motor Hacmi</span>
+                                <span class="detail-value">1.5 cc</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Renk</span>
+                                <span class="detail-value">Beyaz</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Kasa Tipi</span>
+                                <span class="detail-value">MPV</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Açıklama -->
+                    <div class="listing-description">
+                        <h2>Açıklama</h2>
+                        <div class="description-content">
+                            <p>2023 model Ford Tourneo Courier, ekonomik yakıt tüketimi ve geniş iç hacmi ile ideal bir aile aracıdır. 1.5 litre dizel motoru ile şehir içi ve şehirler arası yolculuklarda maksimum verim sağlar.</p>
+                            <p>Yüksek tavan yapısı ve geniş bagaj hacmi ile hem yolcu konforu hem de yük taşıma kapasitesi sunar. Güvenlik ve konfor özellikleriyle günlük kullanım için mükemmel bir seçimdir.</p>
+                        </div>
+                    </div>
+
+                    <!-- Donanım -->
+                    <div class="listing-equipment">
+                        <h2>Araç Donanımı</h2>
+                        <div class="equipment-grid">
+                            <div class="equipment-item">
+                                <i class="fas fa-check"></i>
+                                <span>Geniş İç Hacim</span>
+                            </div>
+                            <div class="equipment-item">
+                                <i class="fas fa-check"></i>
+                                <span>Ekonomik Yakıt Tüketimi</span>
+                            </div>
+                            <div class="equipment-item">
+                                <i class="fas fa-check"></i>
+                                <span>Yüksek Bagaj Kapasitesi</span>
+                            </div>
+                            <div class="equipment-item">
+                                <i class="fas fa-check"></i>
+                                <span>Klima</span>
+                            </div>
+                            <div class="equipment-item">
+                                <i class="fas fa-check"></i>
+                                <span>USB Bağlantısı</span>
+                            </div>
+                            <div class="equipment-item">
+                                <i class="fas fa-check"></i>
+                                <span>ABS & ESP</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sağ Kolon -->
+                <div class="listing-right">
+                    <!-- Fiyat Kartı -->
+                    <div class="price-card">
+                        <div class="price-header">
+                            <span class="price-amount">₺750</span>
+                            <span class="price-period">/gün</span>
+                        </div>
+                        <p class="price-note">*Fiyatlar kiralama süresine göre değişiklik gösterebilir</p>
+                    </div>
+
+                    <!-- İletişim Kartı -->
+                    <div class="contact-card">
+                        <div class="contact-header">
+                            <h3>Kiralama Talebi</h3>
+                            <p>Size özel fiyat teklifimizi hemen iletelim</p>
+                        </div>
+                        <form id="rentalRequestForm" onsubmit="return handleSubmit(event)">
+                            <div class="form-group">
+                                <label for="fullname">Ad Soyad</label>
+                                <input type="text" id="fullname" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Telefon</label>
+                                <input type="tel" id="phone" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-posta</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pickup-date">Alış Tarihi</label>
+                                <input type="date" id="pickup-date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="rental-duration">Kiralama Süresi</label>
+                                <select id="rental-duration" required>
+                                    <option value="">Süre Seçin</option>
+                                    <option value="1-3">1-3 Gün</option>
+                                    <option value="4-7">4-7 Gün</option>
+                                    <option value="8-14">8-14 Gün</option>
+                                    <option value="15+">15+ Gün</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="notes">Ek Notlar</label>
+                                <textarea id="notes" rows="3" placeholder="Varsa özel isteklerinizi belirtebilirsiniz"></textarea>
+                            </div>
+                            <button type="submit" class="btn-contact">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Hemen Teklif Al</span>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Güvenlik Uyarısı -->
+                    <div class="security-notice">
+                        <i class="fas fa-shield-alt"></i>
+                        <p>Güvenliğiniz için kiralama bedelini aracı teslim almadan önce ödemeyin, kredi kartı bilgilerinizi paylaşmayın!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#header-container").load("/components/header.html", function(response, status, xhr) {
+                if (status == "error") {
+                    console.error("Header yüklenirken hata oluştu:", xhr.status, xhr.statusText);
+                }
+            });
+
+            // Galeri Fonksiyonları
+            $('.thumb').click(function() {
+                $('.thumb').removeClass('active');
+                $(this).addClass('active');
+                $('#mainImage').attr('src', $(this).data('img'));
+                $('#mainImage').attr('alt', $(this).find('img').attr('alt'));
+                
+                // Galeri sayacını güncelle
+                let currentIndex = $(this).index() + 1;
+                $('.gallery-counter span').text(currentIndex + '/3');
+            });
+        });
+
+        function handleSubmit(event) {
+            event.preventDefault();
+            
+            const formData = {
+                fullname: $('#fullname').val().trim(),
+                phone: $('#phone').val().trim(),
+                email: $('#email').val().trim(),
+                pickupDate: $('#pickup-date').val(),
+                rentalDuration: $('#rental-duration').val(),
+                notes: $('#notes').val().trim()
+            };
+
+            if (!formData.fullname || !formData.phone || !formData.email || !formData.pickupDate || !formData.rentalDuration) {
+                alert('Lütfen tüm zorunlu alanları doldurun.');
+                return false;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                alert('Lütfen geçerli bir e-posta adresi girin.');
+                return false;
+            }
+
+            const phoneRegex = /^[0-9]{10,11}$/;
+            if (!phoneRegex.test(formData.phone.replace(/\D/g, ''))) {
+                alert('Lütfen geçerli bir telefon numarası girin.');
+                return false;
+            }
+
+            alert('Talebiniz alındı! En kısa sürede size özel teklifimizle iletişime geçeceğiz.');
+            $('#rentalRequestForm')[0].reset();
+            
+            return false;
+        }
+    </script>
+</body>
+<div id="footer-container"></div>
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+<script>
+  // Load components
+  fetch('components/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+  fetch('components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+</html> 

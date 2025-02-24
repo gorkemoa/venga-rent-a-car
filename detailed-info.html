@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detaylı Bilgi - Venga Araç Kiralama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <style>
+        .info-section {
+            padding: 5rem 0;
+            background-color: var(--white);
+        }
+
+        .info-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .info-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .info-header h1 {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .info-card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .info-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+        }
+
+        .info-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .expert-section {
+            background-color: #f8f9fa;
+            padding: 4rem 0;
+            border-radius: 20px;
+            margin-bottom: 4rem;
+        }
+
+        .expert-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .expert-image {
+            border-radius: 20px;
+            overflow: hidden;
+        }
+
+        .expert-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .expert-text h2 {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: var(--secondary-color);
+        }
+
+        .expert-list {
+            list-style: none;
+        }
+
+        .expert-list li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .expert-list li i {
+            color: var(--primary-color);
+            margin-right: 1rem;
+        }
+
+        .cta-section {
+            text-align: center;
+            padding: 4rem 0;
+            background: linear-gradient(135deg, var(--primary-color), #ff7e00);
+            border-radius: 20px;
+            color: white;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .cta-btn {
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn-primary {
+            background-color: white;
+            color: var(--primary-color);
+        }
+
+        .cta-btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .expert-content {
+                grid-template-columns: 1fr;
+            }
+
+            .info-header h1 {
+                font-size: 2rem;
+            }
+
+            .expert-text h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <section class="info-section">
+            <div class="info-container">
+                <div class="info-header">
+                    <h1>Uzman Ekibimizle En İyi Araç Kiralama Deneyimi</h1>
+                    <p>Size özel seçilmiş araç filosu ve profesyonel hizmet anlayışımızla hayalinizdeki aracı en uygun koşullarla kiralayın.</p>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <i class="fas fa-car-side"></i>
+                        <h3>Geniş Araç Filosu</h3>
+                        <p>Ekonomik araçlardan lüks segmente kadar 50'den fazla farklı model arasından size en uygun aracı seçin.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Güvenli Kiralama</h3>
+                        <p>Tam kapsamlı sigorta ve 7/24 yol yardım hizmetiyle güvenli bir sürüş deneyimi yaşayın.</p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-hand-holding-usd"></i>
+                        <h3>Uygun Fiyatlar</h3>
+                        <p>Rekabetçi fiyatlar ve size özel kampanyalarla bütçenize uygun kiralama seçenekleri sunuyoruz.</p>
+                    </div>
+                </div>
+
+                <div class="expert-section">
+                    <div class="info-container">
+                        <div class="expert-content">
+                            <div class="expert-image">
+                                <img src="https://img.freepik.com/free-photo/medium-shot-smiley-people-working-as-team_23-2149307824.jpg?t=st=1740394479~exp=1740398079~hmac=64ee656d21ba5203af914a7f513e8dec383b677578bd8d3c48715bc69648c474&w=2000" alt="Uzman Ekibimiz">
+                            </div>
+                            <div class="expert-text">
+                                <h2>Neden Bizi Tercih Etmelisiniz?</h2>
+                                <ul class="expert-list">
+                                    <li><i class="fas fa-check-circle"></i>15 yıllık sektör deneyimi</li>
+                                    <li><i class="fas fa-check-circle"></i>Profesyonel danışmanlık hizmeti</li>
+                                    <li><i class="fas fa-check-circle"></i>Esnek kiralama seçenekleri</li>
+                                    <li><i class="fas fa-check-circle"></i>Düzenli bakımlı araçlar</li>
+                                    <li><i class="fas fa-check-circle"></i>Hızlı teslimat ve iade süreci</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cta-section">
+                    <h2>Hemen Rezervasyon Yapın</h2>
+                    <p>Size en uygun aracı seçmek ve detaylı bilgi almak için hemen bizimle iletişime geçin.</p>
+                    <div class="cta-buttons">
+                        <a href="tel:+902122121212" class="cta-btn cta-btn-primary">Hemen Ara</a>
+                        <a href="#" class="cta-btn cta-btn-secondary">Teklif Al</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+<div id="footer-container"></div>
+<script src="assets/js/main.js"></script>
+<script>
+  // Load components
+  fetch('components/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+  fetch('components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+</html> 

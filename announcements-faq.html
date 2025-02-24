@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duyurular & SSS - Venga Rent a Car</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero-section {
+            position: relative;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+            height: 60vh;
+            min-height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            padding: var(--spacing-xl) var(--spacing-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-section h1 {
+            font-size: var(--h1-size);
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-section .subtitle {
+            font-size: var(--h3-size);
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #ff4d00;
+        }
+
+        /* Duyurular Stili */
+        .announcements {
+            margin-bottom: 80px;
+        }
+
+        .announcement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .announcement-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .announcement-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-color: #ff4d00;
+        }
+
+        .announcement-icon {
+            font-size: 40px;
+            color: #ff4d00;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .announcement-date {
+            color: #ff4d00;
+            font-size: 14px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            text-align: center;
+        }
+
+        .announcement-title {
+            font-size: 22px;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .announcement-content {
+            color: #666;
+            line-height: 1.8;
+            text-align: center;
+            flex-grow: 1;
+        }
+
+        /* SSS Stili */
+        .faq-container {
+            margin-bottom: 80px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .faq-question {
+            padding: 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: #333;
+            transition: all 0.3s ease;
+            font-size: 18px;
+        }
+
+        .faq-question i {
+            color: #ff4d00;
+            font-size: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background: #f8f8f8;
+        }
+
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            color: #666;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 25px;
+            max-height: 1000px;
+        }
+
+        @media (max-width: 768px) {
+            .section-title h2 {
+                font-size: 28px;
+            }
+
+            .announcement-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .announcement-title {
+                font-size: 20px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <section class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('https://img.freepik.com/free-photo/customer-service-concept_53876-124869.jpg?w=2000');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Duyurular & SSS</h1>
+                <p class="subtitle">Güncel Duyurular ve Sıkça Sorulan Sorular</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="page-container">
+        <!-- Duyurular Bölümü -->
+        <section class="announcements">
+            <div class="section-title">
+                <h2>Güncel Duyurular</h2>
+            </div>
+
+            <div class="announcement-grid">
+                <div class="announcement-card">
+                    <div class="announcement-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="announcement-date">24 Şubat 2024</div>
+                    <h3 class="announcement-title">Yaz Sezonu Erken Rezervasyon Fırsatı</h3>
+                    <div class="announcement-content">
+                        Yaz sezonu için erken rezervasyon fırsatlarımız başladı! 1 Mart - 15 Nisan tarihleri arasında yapacağınız yaz dönemi rezervasyonlarında %25'e varan indirimler sizleri bekliyor.
+                    </div>
+                </div>
+
+                <div class="announcement-card">
+                    <div class="announcement-icon">
+                        <i class="fas fa-car"></i>
+                    </div>
+                    <div class="announcement-date">20 Şubat 2024</div>
+                    <h3 class="announcement-title">Yeni Araçlarımız Filomuza Katıldı</h3>
+                    <div class="announcement-content">
+                        2024 model hibrit ve elektrikli araçlarımız filomuza katıldı. Çevre dostu ve ekonomik araç kiralama seçeneklerimiz hakkında detaylı bilgi için bizimle iletişime geçebilirsiniz.
+                    </div>
+                </div>
+
+                <div class="announcement-card">
+                    <div class="announcement-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="announcement-date">15 Şubat 2024</div>
+                    <h3 class="announcement-title">Mobil Uygulamamız Yayında</h3>
+                    <div class="announcement-content">
+                        Venga Rent a Car mobil uygulaması artık App Store ve Google Play Store'da! Rezervasyonlarınızı yapmak ve yönetmek artık çok daha kolay.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SSS Bölümü -->
+        <section class="faq-container">
+            <div class="section-title">
+                <h2>Sıkça Sorulan Sorular</h2>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span><i class="fas fa-id-card"></i> Araç kiralama için gerekli belgeler nelerdir?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Araç kiralamak için gereken belgeler:
+                    <br>- En az 21 yaşında olmak ve minimum 1 yıllık ehliyet
+                    <br>- Geçerli kimlik veya pasaport
+                    <br>- Geçerli sürücü belgesi
+                    <br>- Kredi kartı
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span><i class="fas fa-money-bill"></i> Kiralama ücretine neler dahildir?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Standart kiralama ücretine dahil olan hizmetler:
+                    <br>- Kasko ve trafik sigortası
+                    <br>- 7/24 yol yardım hizmeti
+                    <br>- Günlük kilometre sınırı (300 km)
+                    <br>- Araç içi dezenfeksiyon
+                    <br>- Havalimanı teslim hizmeti
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span><i class="fas fa-calendar-times"></i> Rezervasyon iptal politikanız nedir?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Rezervasyon iptallerinizi teslim tarihinden 48 saat öncesine kadar ücretsiz olarak yapabilirsiniz. 48 saatten daha kısa sürede yapılan iptallerde bir günlük kiralama bedeli tahsil edilir.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span><i class="fas fa-plane"></i> Yurt dışına çıkış yapabilir miyim?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Araçlarımızla yurt dışına çıkış için önceden izin almanız gerekmektedir. Yurt dışı çıkış izni için ek ücret ve özel sigorta yapılması zorunludur. Detaylı bilgi için müşteri hizmetlerimizle iletişime geçebilirsiniz.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span><i class="fas fa-users"></i> Ek sürücü ekleyebilir miyim?</span>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    Evet, kiralamalarınıza ek sürücü ekleyebilirsiniz. Ek sürücünün de aynı şartları (yaş, ehliyet vs.) sağlaması gerekmektedir. Ek sürücü başına günlük ek ücret uygulanmaktadır.
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="footer-container"></div>
+
+    <script src="https://kit.fontawesome.com/d5f2e819d4.js" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Header ve Footer yükleme
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+
+        // SSS Accordion fonksiyonu
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Tüm active sınıflarını kaldır
+                document.querySelectorAll('.faq-item').forEach(faqItem => {
+                    faqItem.classList.remove('active');
+                });
+
+                // Tıklanan öğeyi aç/kapat
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html> 

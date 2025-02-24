@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ford Tourneo Courier Yıllık Araç Kiralama - Venga Araç Kiralama</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <style>
+:root {
+  /* Ana Renkler */
+  --primary-color: #ff4d00;
+  --secondary-color: #333333;
+  --text-color: #2c2c2c;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+  
+  /* Font Ailesi */
+  --primary-font: 'Poppins', sans-serif;
+  --heading-font: 'Montserrat', sans-serif;
+  
+  /* Font Boyutları */
+  --h1-size: 3.5rem;
+  --h2-size: 2.5rem;
+  --h3-size: 2rem;
+  --body-size: 1rem;
+  --small-size: 0.875rem;
+  
+  /* Boşluklar */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  
+  /* Geçiş Efektleri */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* Genel Stil Sıfırlama */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: var(--body-size);
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Başlık Stilleri */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+
+/* Buton Stilleri */
+.btn {
+  display: inline-block;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  text-decoration: none;
+  transition: var(--transition-normal);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: darken(var(--primary-color), 10%);
+}
+.btn {
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+        .btn-outline {
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .car-detail {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .breadcrumb {
+            margin-bottom: 2rem;
+            color: #666;
+        }
+
+        .car-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .car-image {
+            width: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .car-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .car-info {
+            padding: 1rem;
+        }
+
+        .car-title {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .car-tags {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tag {
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            background-color: #FFE8E9;
+            color: var(--primary-color);
+        }
+
+        .car-specs {
+            display: flex;
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .price-section {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: var(--light-gray);
+            border-radius: 12px;
+        }
+
+        .price-title {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .price-amount {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin: 0.5rem 0;
+        }
+
+        .price-details {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .views {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .views i {
+            color: #4BB4F8;
+        }
+
+
+        .security-info {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #F8F9FA;
+            border-radius: 12px;
+            border: 1px solid #E9ECEF;
+        }
+
+        .security-info h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .security-info p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .share-button {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .share-button i {
+            color: #666;
+        }
+
+        /* Yeni stiller */
+        .car-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+        }
+
+        .tabs {
+            margin-top: 3rem;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .tab-buttons {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: -1px;
+        }
+
+        .tab-btn {
+            padding: 1rem 2rem;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab-btn.active {
+            color: var(--primary-color);
+            border-bottom-color: var(--primary-color);
+        }
+
+        .tab-content {
+            padding: 2rem 0;
+        }
+
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .specs-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+
+        .specs-table td:first-child {
+            font-weight: 600;
+            width: 30%;
+        }
+
+        .installment-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+        }
+
+        .installment-table th,
+        .installment-table td {
+            padding: 1rem;
+            border: 1px solid #eee;
+            text-align: center;
+        }
+
+        .installment-table th {
+            background-color: var(--light-gray);
+            font-weight: 600;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+        }
+
+        .feature-item i {
+            color: var(--primary-color);
+        }
+    </style>
+        <div id="header-container"></div>
+
+</head>
+<body>
+   
+    <main class="car-detail">
+        <div class="car-container">
+            <div class="car-image">
+                <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier">
+                
+                <div class="car-gallery">
+                    <div class="gallery-item">
+                        <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier 1">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier 2">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier 3">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier 4">
+                    </div>
+                </div>
+            </div>
+
+            <div class="car-info">
+                <h1 class="car-title">HYUNDAI i20 Yıllık Araç Kiralama</h1>
+                
+                <div class="car-tags">
+                    <span class="tag">Kampanyalı Araç</span>
+                    <span class="tag">Hızlı Teslimat</span>
+                </div>
+
+                <div class="views">
+                    <i class="fas fa-eye"></i>
+                    <span>92 kişi tarafından görüntülendi</span>
+                </div>
+
+                <div class="car-specs">
+                    <div class="spec-item">
+                        <i class="fas fa-car"></i>
+                        <span>HATCHBACK</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-gas-pump"></i>
+                        <span>BENZİNLİ</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-cog"></i>
+                        <span>OTOMATİK</span>
+                    </div>
+                    <div class="spec-item">
+                        <i class="fas fa-user"></i>
+                        <span>5 KİŞİLİK</span>
+                    </div>
+                </div>
+
+                <div class="price-section">
+                    <div class="price-title">Aylık Kira Tutarı</div>
+                    <div class="price-amount">32.440 TL</div>
+                    <div class="price-details">'den başlayan fiyatlar + KDV</div>
+                    <div class="price-note">(36 Ay Vadeli, Yıllık 10000 KM, 880.000 + KDV Peşinat)</div>
+                    
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                        Hızlı Teklif Oluştur
+                        <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                    </button>
+                </div>
+
+                <div class="security-info">
+                    <h3>"0 KM" Aracını Hedef Filo Güvencesiyle Kirala</h3>
+                    <p>Filomingo'dan uzun dönem aracını kiraladıktan sonra, Hedef Filo'nun tüm Türkiye'deki hasar-arıza servis ağından faydalanın; ikame araç, lastik değişimi, HGS gibi hizmetleri Hedef Filo profesyonelliği ile alırsın.</p>
+                </div>
+
+                <div class="action-buttons">
+                    <button class="btn btn-primary" style="flex: 1;">
+                        Başvuru Formu Gönder
+                    </button>
+                    <button class="share-button">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button class="share-button">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <div class="tab-buttons">
+                <button class="tab-btn active">Teknik Özellikler</button>
+                <button class="tab-btn">Taksit Seçenekleri</button>
+                <button class="tab-btn">Donanım Özellikleri</button>
+                <button class="tab-btn">Kiralama Koşulları</button>
+            </div>
+
+            <div class="tab-content">
+                <table class="specs-table">
+                    <tr>
+                        <td>Motor</td>
+                        <td>1.5L EcoBlue Dizel Motor</td>
+                    </tr>
+                    <tr>
+                        <td>Güç</td>
+                        <td>100 PS</td>
+                    </tr>
+                    <tr>
+                        <td>Şanzıman</td>
+                        <td>6 İleri Otomatik</td>
+                    </tr>
+                    <tr>
+                        <td>Yakıt Tüketimi</td>
+                        <td>5.4L/100km (Karma)</td>
+                    </tr>
+                    <tr>
+                        <td>Bagaj Hacmi</td>
+                        <td>1656 Litre</td>
+                    </tr>
+                </table>
+
+                <div class="installment-options" style="display: none;">
+                    <table class="installment-table">
+                        <tr>
+                            <th>Vade</th>
+                            <th>Aylık Taksit</th>
+                            <th>Peşinat</th>
+                            <th>Toplam</th>
+                        </tr>
+                        <tr>
+                            <td>12 Ay</td>
+                            <td>35.440 TL</td>
+                            <td>880.000 TL</td>
+                            <td>1.305.280 TL</td>
+                        </tr>
+                        <tr>
+                            <td>24 Ay</td>
+                            <td>33.940 TL</td>
+                            <td>880.000 TL</td>
+                            <td>1.694.560 TL</td>
+                        </tr>
+                        <tr>
+                            <td>36 Ay</td>
+                            <td>32.440 TL</td>
+                            <td>880.000 TL</td>
+                            <td>2.047.840 TL</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="features-grid" style="display: none;">
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>LED Gündüz Farları</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Yokuş Kalkış Desteği</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Apple CarPlay & Android Auto</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Geri Görüş Kamerası</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Şerit Takip Sistemi</span>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>Adaptif Hız Sabitleyici</span>
+                    </div>
+                </div>
+
+                <div class="rental-conditions" style="display: none;">
+                    <h3>Kiralama Koşulları</h3>
+                    <ul style="list-style: none; margin-top: 1rem;">
+                        <li style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
+                            Minimum kiralama süresi 12 aydır
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
+                            Yıllık km sınırı 10.000 km'dir
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
+                            Kasko, trafik sigortası ve bakım ücretleri dahildir
+                        </li>
+                        <li style="margin-bottom: 0.5rem;">
+                            <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
+                            Lastik değişimi yılda 1 kez ücretsizdir
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Tab sistemi için JavaScript
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content > div');
+
+        tabButtons.forEach((button, index) => {
+            button.addEventListener('click', () => {
+                // Aktif tab butonunu değiştir
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                // İlgili içeriği göster
+                tabContents.forEach(content => content.style.display = 'none');
+                tabContents[index].style.display = 'block';
+            });
+        });
+
+        // İlk tabı aktif et
+        tabContents[0].style.display = 'block';
+        tabContents.forEach((content, index) => {
+            if (index > 0) content.style.display = 'none';
+        });
+    </script>
+</body>
+<div id="footer-container"></div>
+
+
+<!-- Scripts -->
+<script src="assets/js/main.js"></script>
+<script>
+  // Load components
+  fetch('components/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+  fetch('components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+</html>

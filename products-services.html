@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Uzun Dönem Araç Kiralama - Venga Rent a Car</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   
+   <style>
+:root {
+  /* Ana Renkler */
+  --primary-color: #ff4d00;
+  --secondary-color: #333333;
+  --text-color: #2c2c2c;
+  --light-gray: #f5f5f5;
+  --white: #ffffff;
+  
+  /* Font Ailesi */
+  --primary-font: 'Poppins', sans-serif;
+  --heading-font: 'Montserrat', sans-serif;
+  
+  /* Font Boyutları */
+  --h1-size: 3.5rem;
+  --h2-size: 2.5rem;
+  --h3-size: 2rem;
+  --body-size: 1rem;
+  --small-size: 0.875rem;
+  
+  /* Boşluklar */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  
+  /* Geçiş Efektleri */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* Genel Stil Sıfırlama */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: var(--body-size);
+}
+      
+        .page-title {
+            font-size: 1.75rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .filter-section {
+            background: var(--white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .filter-title {
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-color);
+            margin: 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .filter-content {
+            padding: 1rem;
+        }
+
+        .car-card {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .car-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+
+        .car-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .car-card:hover .car-image {
+            transform: scale(1.03);
+        }
+
+        .car-tags {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .car-tag {
+            padding: 0.25rem 0.75rem;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .tag-campaign {
+            background-color: #ff6b00;
+            color: white;
+        }
+
+        .tag-fast-delivery {
+            background-color: #e74c3c;
+            color: white;
+        }
+
+        .tag-suv {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .car-details {
+            padding: 1.25rem;
+        }
+
+        .car-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 0.25rem;
+        }
+
+        .car-subtitle {
+            font-size: 0.85rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .car-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            padding: 0.5rem 0;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .feature-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            padding: 0.25rem 0.5rem;
+            background-color: var(--light-gray);
+            border-radius: 4px;
+        }
+
+        .feature-icon {
+            font-size: 0.75rem;
+            color: var(--primary-color);
+        }
+
+        .car-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 0.125rem;
+        }
+
+        .price-note {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .price-details {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            transition: background-color 0.2s ease;
+        }
+
+        .price-details:hover {
+            background-color: var(--light-gray);
+        }
+
+        .sort-select {
+            padding: 0.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 0.875rem;
+        }
+
+        .filter-reset {
+            background: none;
+            border: none;
+            color: var(--primary-color);
+            font-weight: 500;
+            cursor: pointer;
+            padding: 0.5rem 1rem;
+        }
+
+        /* Yeni animasyon ve geçiş stilleri */
+        .car-card {
+            transition: all 0.3s ease-in-out;
+            transform-origin: center;
+            height: auto;
+        }
+
+        .car-card.filtered-out {
+            opacity: 0;
+            transform: scale(0.95);
+            height: 0;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .filter-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-in-out;
+            padding: 0 1rem;
+        }
+
+        .filter-content.active {
+            max-height: 200px;
+            padding: 1rem;
+        }
+
+        .form-check {
+            margin-bottom: 0.5rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-check:hover {
+            transform: translateX(5px);
+        }
+
+        .form-check-input {
+            cursor: pointer;
+        }
+
+        .form-check-label {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .filter-title {
+            transition: all 0.2s ease;
+        }
+
+        .filter-title:hover {
+            background-color: var(--light-gray);
+        }
+
+        .filter-title i {
+            transition: transform 0.3s ease;
+        }
+
+        .filter-title.active i {
+            transform: rotate(180deg);
+        }
+
+        .filter-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--light-gray);
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            margin: 0.25rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .filter-badge:hover {
+            background: var(--border-color);
+        }
+
+        .filter-badge i {
+            margin-left: 0.5rem;
+            font-size: 0.75rem;
+        }
+
+        .active-filters {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+        }
+
+        .no-results {
+            text-align: center;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+
+        .no-results i {
+            font-size: 3rem;
+            color: var(--border-color);
+            margin-bottom: 1rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .car-card {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Responsive filtre stilleri */
+        .filter-toggle-btn {
+            display: none;
+            margin-right: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .filter-toggle-btn i {
+            margin-right: 0.5rem;
+        }
+
+        .offcanvas {
+            max-width: 300px;
+        }
+
+        @media (max-width: 991px) {
+            .filter-toggle-btn {
+                display: inline-flex;
+                align-items: center;
+            }
+
+            .filter-section {
+                display: none;
+            }
+
+            .col-lg-9 {
+                width: 100%;
+            }
+
+            .offcanvas .filter-section {
+                display: block;
+                box-shadow: none;
+                padding: 0;
+            }
+
+            .active-filters {
+                margin-top: 1rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .sort-select {
+                width: auto;
+            }
+
+            .page-title {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .filter-badge {
+                font-size: 0.75rem;
+                padding: 0.25rem 0.5rem;
+            }
+
+            .active-filters {
+                padding: 0.25rem;
+            }
+        }
+
+        /* Container düzeltmeleri */
+        .row:has(.car-card) {
+            min-height: 400px;
+            position: relative;
+        }
+
+        .no-results {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 100%;
+            padding: 2rem;
+            background: var(--white);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Filtre container düzeltmeleri */
+        .filter-section {
+            position: sticky;
+            top: 20px;
+            max-height: calc(100vh - 40px);
+            overflow-y: auto;
+        }
+
+        /* Aktif filtreler için düzeltme */
+        .active-filters {
+            background: var(--white);
+            padding: 0.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            min-height: 44px;
+        }
+
+        /* Araç kartları container'ı için düzeltme */
+        .cars-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        @media (max-width: 991px) {
+            .cars-container {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+   
+        
+
+
+    </style>
+
+</head>
+<body class="bg-light">    
+    <div id="header-container"></div>
+
+
+    <!-- Main Content -->
+    <div class="container py-4">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="d-flex align-items-center">
+                <button class="filter-toggle-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas">
+                    <i class="fas fa-filter"></i>
+                    Filtreler
+                </button>
+                <div>
+                    <h1 class="page-title">Uzun Dönem Araç Kiralama</h1>
+                    <p class="text-muted">26 Araç listeleniyor</p>
+                </div>
+            </div>
+            <select class="sort-select">
+                <option>Önerilen Sıralama</option>
+                <option>Fiyat (Düşükten Yükseğe)</option>
+                <option>Fiyat (Yüksekten Düşüğe)</option>
+                <option>En Yeni</option>
+            </select>
+        </div>
+
+        <!-- Active Filters Section -->
+        <div class="active-filters" style="display: none;">
+            <!-- Aktif filtreler buraya dinamik olarak eklenecek -->
+        </div>
+
+        <div class="row">
+            <!-- Filters -->
+            <div class="col-lg-3">
+                <div class="filter-section">
+                    <div class="d-flex justify-content-between align-items-center mb-3">
+                        <h5 class="m-0">Filtreler</h5>
+                        <button class="filter-reset">Temizle</button>
+                    </div>
+
+                    <div class="mb-3">
+                        <h6 class="filter-title">
+                            Marka
+                            <i class="fas fa-chevron-down"></i>
+                        </h6>
+                        <div class="filter-content">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="hyundai">
+                                <label class="form-check-label" for="hyundai">Hyundai</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="opel">
+                                <label class="form-check-label" for="opel">Opel</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="volkswagen">
+                                <label class="form-check-label" for="volkswagen">Volkswagen</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <h6 class="filter-title">
+                            Kasa Tipi
+                            <i class="fas fa-chevron-down"></i>
+                        </h6>
+                        <div class="filter-content">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="hatchback">
+                                <label class="form-check-label" for="hatchback">Hatchback</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="sedan">
+                                <label class="form-check-label" for="sedan">Sedan</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="suv">
+                                <label class="form-check-label" for="suv">SUV</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <h6 class="filter-title">
+                            Yakıt Tipi
+                            <i class="fas fa-chevron-down"></i>
+                        </h6>
+                        <div class="filter-content">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="benzin">
+                                <label class="form-check-label" for="benzin">Benzin</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="dizel">
+                                <label class="form-check-label" for="dizel">Dizel</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="hybrid">
+                                <label class="form-check-label" for="hybrid">Hibrit</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Car Listings -->
+            <div class="col-lg-9">
+                <div class="row cars-container">
+                    <!-- Car Card 1 -->
+                    <div class="car-wrapper">
+                        <div class="car-card">
+                            <div class="position-relative">
+                                <img src="https://img.freepik.com/free-photo/white-offroader-jeep-parking_114579-4007.jpg?t=st=1740398304~exp=1740401904~hmac=e6edf07953948b7a36357c2c37760f87d1a63c18773839e46819a1b5b036fbe0&w=2000" alt="Hyundai i20" class="car-image">
+                                <div class="car-tags">
+                                    <span class="car-tag tag-campaign">Kampanyalı Araç</span>
+                                    <span class="car-tag tag-fast-delivery">Hızlı Teslimat</span>
+                                </div>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-title">HYUNDAI i20</h3>
+                                <p class="car-subtitle">1.0 T-GDI 100PS JUMP + NAV BENZİN OTO.</p>
+                                <div class="car-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-car"></i>
+                                        </span>
+                                        Hatchback
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-gas-pump"></i>
+                                        </span>
+                                        Benzinli
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-cog"></i>
+                                        </span>
+                                        Otomatik
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-users"></i>
+                                        </span>
+                                        5 Kişilik
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div>
+                                        <div class="car-price">32.440 TL</div>
+                                        <div class="price-note">'den başlayan fiyatlar</div>
+                                    </div>
+                                    <a href="#" class="price-details">
+                                        Detaylı Bilgi
+                                        <i class="fas fa-chevron-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 2 -->
+                    <div class="car-wrapper">
+                        <div class="car-card">
+                            <div class="position-relative">
+                                <img src="https://img.freepik.com/free-photo/vintage-sedan-car-driving-sunlight-road_114579-5066.jpg?t=st=1740398572~exp=1740402172~hmac=4d460a68165bdb6012874b6eeaa926cd9ab805a38b86e97344bfbb752a8301da&w=2000" alt="Opel Crossland" class="car-image">
+                                <div class="car-tags">
+                                    <span class="car-tag tag-suv">SUV</span>
+                                    <span class="car-tag tag-fast-delivery">Hızlı Teslimat</span>
+                                </div>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-title">OPEL Crossland</h3>
+                                <p class="car-subtitle">1.2 BENZİNLİ AT-6 130HP ESSENTIAL</p>
+                                <div class="car-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-car"></i>
+                                        </span>
+                                        SUV
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-gas-pump"></i>
+                                        </span>
+                                        Benzinli
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-cog"></i>
+                                        </span>
+                                        Otomatik
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-users"></i>
+                                        </span>
+                                        5 Kişilik
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div>
+                                        <div class="car-price">31.360 TL</div>
+                                        <div class="price-note">'den başlayan fiyatlar</div>
+                                    </div>
+                                    <a href="#" class="price-details">
+                                        Detaylı Bilgi
+                                        <i class="fas fa-chevron-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 3 -->
+                    <div class="car-wrapper">
+                        <div class="car-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341" alt="Opel Corsa" class="car-image">
+                                <div class="car-tags">
+                                    <span class="car-tag tag-campaign">Kampanyalı Araç</span>
+                                </div>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-title">OPEL CORSA</h3>
+                                <p class="car-subtitle">1.2 BENZİNLİ AT8 100 HP EDITION</p>
+                                <div class="car-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-car"></i>
+                                        </span>
+                                        Hatchback
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-gas-pump"></i>
+                                        </span>
+                                        Benzinli
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-cog"></i>
+                                        </span>
+                                        Otomatik
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-users"></i>
+                                        </span>
+                                        5 Kişilik
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div>
+                                        <div class="car-price">31.000 TL</div>
+                                        <div class="price-note">'den başlayan fiyatlar</div>
+                                    </div>
+                                    <a href="#" class="price-details">
+                                        Detaylı Bilgi
+                                        <i class="fas fa-chevron-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 4 -->
+                    <div class="car-wrapper">
+                        <div class="car-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982" alt="Mercedes A180" class="car-image">
+                                <div class="car-tags">
+                                    <span class="car-tag tag-fast-delivery">Hızlı Teslimat</span>
+                                </div>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-title">MERCEDES A180</h3>
+                                <p class="car-subtitle">1.5 CDI AMG PREMIUM OTOMATİK</p>
+                                <div class="car-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-car"></i>
+                                        </span>
+                                        Hatchback
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-gas-pump"></i>
+                                        </span>
+                                        Dizel
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-cog"></i>
+                                        </span>
+                                        Otomatik
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-users"></i>
+                                        </span>
+                                        5 Kişilik
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div>
+                                        <div class="car-price">45.750 TL</div>
+                                        <div class="price-note">'den başlayan fiyatlar</div>
+                                    </div>
+                                    <a href="#" class="price-details">
+                                        Detaylı Bilgi
+                                        <i class="fas fa-chevron-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 5 -->
+                    <div class="car-wrapper">
+                        <div class="car-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1619682817481-e994891cd1f5" alt="BMW X3" class="car-image">
+                                <div class="car-tags">
+                                    <span class="car-tag tag-suv">SUV</span>
+                                    <span class="car-tag tag-campaign">Kampanyalı Araç</span>
+                                </div>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-title">BMW X3</h3>
+                                <p class="car-subtitle">2.0i xDrive LUXURY LINE</p>
+                                <div class="car-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-car"></i>
+                                        </span>
+                                        SUV
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-gas-pump"></i>
+                                        </span>
+                                        Benzinli
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-cog"></i>
+                                        </span>
+                                        Otomatik
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-users"></i>
+                                        </span>
+                                        5 Kişilik
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div>
+                                        <div class="car-price">52.890 TL</div>
+                                        <div class="price-note">'den başlayan fiyatlar</div>
+                                    </div>
+                                    <a href="#" class="price-details">
+                                        Detaylı Bilgi
+                                        <i class="fas fa-chevron-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Car Card 6 -->
+                    <div class="car-wrapper">
+                        <div class="car-card">
+                            <div class="position-relative">
+                                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8" alt="Volkswagen Passat" class="car-image">
+                                <div class="car-tags">
+                                    <span class="car-tag tag-fast-delivery">Hızlı Teslimat</span>
+                                </div>
+                            </div>
+                            <div class="car-details">
+                                <h3 class="car-title">VW PASSAT</h3>
+                                <p class="car-subtitle">1.5 TSI ACT ELEGANCE DSG</p>
+                                <div class="car-features">
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-car"></i>
+                                        </span>
+                                        Sedan
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-gas-pump"></i>
+                                        </span>
+                                        Benzinli
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-cog"></i>
+                                        </span>
+                                        Otomatik
+                                    </div>
+                                    <div class="feature-item">
+                                        <span class="feature-icon">
+                                            <i class="fas fa-users"></i>
+                                        </span>
+                                        5 Kişilik
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-end">
+                                    <div>
+                                        <div class="car-price">41.230 TL</div>
+                                        <div class="price-note">'den başlayan fiyatlar</div>
+                                    </div>
+                                    <a href="#" class="price-details">
+                                        Detaylı Bilgi
+                                        <i class="fas fa-chevron-right ms-1"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offcanvas Filter Menu -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="filterOffcanvas">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Filtreler</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="filter-section">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h5 class="m-0">Filtreler</h5>
+                    <button class="filter-reset">Temizle</button>
+                </div>
+
+                <div class="mb-3">
+                    <h6 class="filter-title">
+                        Marka
+                        <i class="fas fa-chevron-down"></i>
+                    </h6>
+                    <div class="filter-content">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hyundai-mobile">
+                            <label class="form-check-label" for="hyundai-mobile">Hyundai</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="opel-mobile">
+                            <label class="form-check-label" for="opel-mobile">Opel</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="volkswagen-mobile">
+                            <label class="form-check-label" for="volkswagen-mobile">Volkswagen</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h6 class="filter-title">
+                        Kasa Tipi
+                        <i class="fas fa-chevron-down"></i>
+                    </h6>
+                    <div class="filter-content">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hatchback-mobile">
+                            <label class="form-check-label" for="hatchback-mobile">Hatchback</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="sedan-mobile">
+                            <label class="form-check-label" for="sedan-mobile">Sedan</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="suv-mobile">
+                            <label class="form-check-label" for="suv-mobile">SUV</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <h6 class="filter-title">
+                        Yakıt Tipi
+                        <i class="fas fa-chevron-down"></i>
+                    </h6>
+                    <div class="filter-content">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="benzin-mobile">
+                            <label class="form-check-label" for="benzin-mobile">Benzin</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="dizel-mobile">
+                            <label class="form-check-label" for="dizel-mobile">Dizel</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hybrid-mobile">
+                            <label class="form-check-label" for="hybrid-mobile">Hibrit</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div id="footer-container"></div>
+
+    <script>
+          fetch('components/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+  fetch('components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+        class FilterManager {
+            constructor() {
+                this.cars = this.initializeCars();
+                this.filters = {
+                    brands: new Set(),
+                    bodyTypes: new Set(),
+                    fuelTypes: new Set()
+                };
+                this.activeFiltersContainer = document.querySelector('.active-filters');
+                this.initializeEventListeners();
+                this.updateCarCount(this.cars.length);
+            }
+
+            initializeCars() {
+                return Array.from(document.querySelectorAll('.car-wrapper')).map(wrapper => {
+                    const card = wrapper.querySelector('.car-card');
+                    const brandElement = card.querySelector('.car-title');
+                    const bodyTypeElement = card.querySelector('.feature-item:first-child');
+                    const fuelTypeElement = card.querySelector('.feature-item:nth-child(2)');
+                    const priceElement = card.querySelector('.car-price');
+
+                    return {
+                        element: wrapper,
+                        brand: brandElement ? brandElement.textContent.trim().split(' ')[0] : '',
+                        bodyType: bodyTypeElement ? bodyTypeElement.textContent.trim() : '',
+                        fuelType: fuelTypeElement ? fuelTypeElement.textContent.trim() : '',
+                        price: priceElement ? parseInt(priceElement.textContent.replace(/[^0-9]/g, '')) : 0,
+                        visible: true
+                    };
+                });
+            }
+
+            initializeEventListeners() {
+                document.querySelectorAll('.filter-title').forEach(title => {
+                    title.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const content = title.nextElementSibling;
+                        title.classList.toggle('active');
+                        content.classList.toggle('active');
+                        
+                        if (content.classList.contains('active')) {
+                            content.style.maxHeight = content.scrollHeight + 'px';
+                        } else {
+                            content.style.maxHeight = '0';
+                        }
+                    });
+                });
+
+                document.querySelectorAll('.form-check-input').forEach(checkbox => {
+                    checkbox.addEventListener('change', () => {
+                        this.handleFilterChange(checkbox);
+                    });
+                });
+
+                document.querySelector('.sort-select').addEventListener('change', () => {
+                    this.applySorting();
+                });
+
+                document.querySelectorAll('.filter-reset').forEach(button => {
+                    button.addEventListener('click', () => {
+                        this.resetFilters();
+                    });
+                });
+
+                this.initializeMobileSync();
+            }
+
+            handleFilterChange(checkbox) {
+                const type = checkbox.id.replace('-mobile', '');
+                const value = checkbox.checked;
+                const category = this.getFilterCategory(type);
+                const filterValue = this.getFilterValue(type);
+
+                if (!category) return;
+
+                this.syncCheckboxes(type, value);
+
+                if (value) {
+                    this.filters[category].add(filterValue);
+                } else {
+                    this.filters[category].delete(filterValue);
+                }
+
+                this.updateActiveFilters();
+                this.updateVisibility();
+            }
+
+            getFilterCategory(type) {
+                if (['hyundai', 'opel', 'volkswagen'].includes(type)) return 'brands';
+                if (['hatchback', 'sedan', 'suv'].includes(type)) return 'bodyTypes';
+                if (['benzin', 'dizel', 'hybrid'].includes(type)) return 'fuelTypes';
+                return null;
+            }
+
+            getFilterValue(type) {
+                const baseType = type.replace('-mobile', '');
+                const mappings = {
+                    brands: {
+                        hyundai: 'HYUNDAI',
+                        opel: 'OPEL',
+                        volkswagen: 'VW'
+                    },
+                    bodyTypes: {
+                        hatchback: 'Hatchback',
+                        sedan: 'Sedan',
+                        suv: 'SUV'
+                    },
+                    fuelTypes: {
+                        benzin: 'Benzinli',
+                        dizel: 'Dizel',
+                        hybrid: 'Hibrit'
+                    }
+                };
+
+                for (const [category, values] of Object.entries(mappings)) {
+                    if (baseType in values) {
+                        return values[baseType];
+                    }
+                }
+                return baseType;
+            }
+
+            updateActiveFilters() {
+                const activeFilters = [
+                    ...this.filters.brands,
+                    ...this.filters.bodyTypes,
+                    ...this.filters.fuelTypes
+                ];
+
+                if (activeFilters.length === 0) {
+                    this.activeFiltersContainer.style.display = 'none';
+                    return;
+                }
+
+                this.activeFiltersContainer.style.display = 'flex';
+                this.activeFiltersContainer.innerHTML = activeFilters.map(filter => `
+                    <span class="filter-badge" data-filter="${filter}">
+                        ${filter}
+                        <i class="fas fa-times"></i>
+                    </span>
+                `).join('');
+
+                this.activeFiltersContainer.querySelectorAll('.filter-badge').forEach(badge => {
+                    badge.addEventListener('click', () => {
+                        this.removeFilter(badge.dataset.filter);
+                    });
+                });
+            }
+
+            removeFilter(filterValue) {
+                for (const category of Object.keys(this.filters)) {
+                    if (this.filters[category].has(filterValue)) {
+                        this.filters[category].delete(filterValue);
+                        
+                        document.querySelectorAll('.form-check-input').forEach(checkbox => {
+                            const checkboxValue = this.getFilterValue(checkbox.id);
+                            if (checkboxValue === filterValue) {
+                                checkbox.checked = false;
+                            }
+                        });
+                    }
+                }
+
+                this.updateActiveFilters();
+                this.updateVisibility();
+            }
+
+            updateVisibility() {
+                let visibleCount = 0;
+                const container = document.querySelector('.cars-container');
+
+                this.cars.forEach(car => {
+                    const matchesBrand = this.filters.brands.size === 0 || this.filters.brands.has(car.brand);
+                    const matchesBodyType = this.filters.bodyTypes.size === 0 || this.filters.bodyTypes.has(car.bodyType);
+                    const matchesFuelType = this.filters.fuelTypes.size === 0 || this.filters.fuelTypes.has(car.fuelType);
+
+                    const visible = matchesBrand && matchesBodyType && matchesFuelType;
+                    car.visible = visible;
+                    
+                    if (visible) {
+                        car.element.style.display = '';
+                        visibleCount++;
+                    } else {
+                        car.element.style.display = 'none';
+                    }
+                });
+
+                this.updateCarCount(visibleCount);
+                this.checkNoResults(visibleCount);
+                this.applySorting();
+            }
+
+            updateCarCount(count) {
+                const countText = document.querySelector('.text-muted');
+                if (countText) {
+                    countText.textContent = `${count} Araç listeleniyor`;
+                }
+            }
+
+            checkNoResults(visibleCount) {
+                const container = document.querySelector('.cars-container');
+                let noResults = container.querySelector('.no-results');
+
+                if (visibleCount === 0) {
+                    if (!noResults) {
+                        noResults = document.createElement('div');
+                        noResults.className = 'no-results';
+                        noResults.innerHTML = `
+                            <i class="fas fa-search"></i>
+                            <h3>Sonuç Bulunamadı</h3>
+                            <p>Seçtiğiniz filtrelere uygun araç bulunamadı. Lütfen farklı filtreler deneyin.</p>
+                        `;
+                        container.appendChild(noResults);
+                    }
+                } else if (noResults) {
+                    noResults.remove();
+                }
+            }
+
+            applySorting() {
+                const sortSelect = document.querySelector('.sort-select');
+                const container = document.querySelector('.cars-container');
+                const visibleCars = this.cars.filter(car => car.visible);
+
+                visibleCars.sort((a, b) => {
+                    switch(sortSelect.value) {
+                        case 'Fiyat (Düşükten Yükseğe)':
+                            return a.price - b.price;
+                        case 'Fiyat (Yüksekten Düşüğe)':
+                            return b.price - a.price;
+                        case 'En Yeni':
+                            return 0;
+                        default:
+                            return 0;
+                    }
+                });
+
+                // Görünür araçları sırala
+                visibleCars.forEach(car => {
+                    container.appendChild(car.element);
+                });
+            }
+
+            resetFilters() {
+                document.querySelectorAll('.form-check-input').forEach(checkbox => {
+                    checkbox.checked = false;
+                });
+
+                Object.keys(this.filters).forEach(key => {
+                    this.filters[key].clear();
+                });
+
+                this.updateActiveFilters();
+                this.updateVisibility();
+            }
+
+            initializeMobileSync() {
+                const pairs = [
+                    ['hyundai', 'hyundai-mobile'],
+                    ['opel', 'opel-mobile'],
+                    ['volkswagen', 'volkswagen-mobile'],
+                    ['hatchback', 'hatchback-mobile'],
+                    ['sedan', 'sedan-mobile'],
+                    ['suv', 'suv-mobile'],
+                    ['benzin', 'benzin-mobile'],
+                    ['dizel', 'dizel-mobile'],
+                    ['hybrid', 'hybrid-mobile']
+                ];
+
+                pairs.forEach(([desktop, mobile]) => {
+                    this.syncPair(desktop, mobile);
+                });
+            }
+
+            syncPair(desktop, mobile) {
+                const desktopCheckbox = document.getElementById(desktop);
+                const mobileCheckbox = document.getElementById(mobile);
+
+                if (!desktopCheckbox || !mobileCheckbox) return;
+
+                desktopCheckbox.addEventListener('change', () => {
+                    mobileCheckbox.checked = desktopCheckbox.checked;
+                });
+
+                mobileCheckbox.addEventListener('change', () => {
+                    desktopCheckbox.checked = mobileCheckbox.checked;
+                });
+            }
+
+            syncCheckboxes(id, value) {
+                const baseId = id.replace('-mobile', '');
+                const mobileId = baseId + '-mobile';
+                
+                const desktopCheckbox = document.getElementById(baseId);
+                const mobileCheckbox = document.getElementById(mobileId);
+
+                if (desktopCheckbox) desktopCheckbox.checked = value;
+                if (mobileCheckbox) mobileCheckbox.checked = value;
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterManager = new FilterManager();
+        });
+    </script>
+</body>
+</html> 

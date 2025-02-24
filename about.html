@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımızda - Venga Rent A Car</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="header-container"></div>
+
+    <main>
+        <section class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            url('https://img.freepik.com/free-photo/abstract-networking-concept-still-life-arrangement_23-2149035709.jpg?t=st=1740397778~exp=1740401378~hmac=c723d3fcf9c5d29a058cc2d06f93a9f7e1741e4c97b09f8c83f814ddf54051ee&w=2000');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Hakkımızda</h1>
+                    <p class="subtitle">Güvenilir ve Kaliteli Araç Kiralama Hizmeti</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Biz Kimiz?</h2>
+                        <p>Venga Rent A Car olarak, müşterilerimize en kaliteli ve güvenilir araç kiralama hizmetini sunmayı hedefliyoruz. 2024 yılından bu yana, modern araç filomuz ve profesyonel ekibimizle sizlere hizmet vermekteyiz.
+                        
+                
+                    Müşterilerimize en uygun fiyatlarla, en kaliteli araçları sunarak, konforlu ve güvenli bir seyahat deneyimi yaşatmak
+                        
+                       
+                  Türkiye'nin lider araç kiralama şirketi olarak, teknoloji ve inovasyonu kullanarak müşteri memnuniyetini en üst seviyede tutmak.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://img.freepik.com/free-photo/medium-shot-smiley-people-working-as-team_23-2149307824.jpg?t=st=1740394479~exp=1740398079~hmac=64ee656d21ba5203af914a7f513e8dec383b677578bd8d3c48715bc69648c474&w=2000" alt="Venga Rent A Car Ofis">
+                    </div>
+                </div>
+                <div class="features">
+                    <h2 class="section-title">Neden Bizi Tercih Etmelisiniz?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-car fa-2x"></i>
+                            </div>
+                            <h4>Geniş Araç Filosu</h4>
+                            <p>Her ihtiyaca uygun, bakımlı ve modern araçlar</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-headset fa-2x"></i>
+                            </div>
+                            <h4>7/24 Hizmet</h4>
+                            <p>Kesintisiz müşteri desteği ve yardım</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-shield-alt fa-2x"></i>
+                            </div>
+                            <h4>Güvenli Kiralama</h4>
+                            <p>Tam sigorta ve güvenli ödeme seçenekleri</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-tag fa-2x"></i>
+                            </div>
+                            <h4>Uygun Fiyatlar</h4>
+                            <p>Rekabetçi fiyatlar ve özel kampanyalar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div id="footer-container"></div>
+    <script src="https://kit.fontawesome.com/d5f2e819d4.js" crossorigin="anonymous"></script>
+</body>
+<script src="assets/js/main.js"></script>
+<script>
+  // Load components
+  fetch('components/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+  fetch('components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
+</html> 
