@@ -5,381 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ford Tourneo Courier Yıllık Araç Kiralama - Venga Araç Kiralama</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/layout.css">
-    <style>
-:root {
-  /* Ana Renkler */
-  --primary-color: #ff4d00;
-  --secondary-color: #333333;
-  --text-color: #2c2c2c;
-  --light-gray: #f5f5f5;
-  --white: #ffffff;
-  
-  /* Font Ailesi */
-  --primary-font: 'Poppins', sans-serif;
-  --heading-font: 'Montserrat', sans-serif;
-  
-  /* Font Boyutları */
-  --h1-size: 3.5rem;
-  --h2-size: 2.5rem;
-  --h3-size: 2rem;
-  --body-size: 1rem;
-  --small-size: 0.875rem;
-  
-  /* Boşluklar */
-  --spacing-xs: 0.5rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  
-  /* Border Radius */
-  --border-radius-sm: 4px;
-  --border-radius-md: 8px;
-  --border-radius-lg: 16px;
-  
-  /* Geçiş Efektleri */
-  --transition-fast: 0.2s ease;
-  --transition-normal: 0.3s ease;
-}
-
-/* Genel Stil Sıfırlama */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-family: var(--primary-font);
-  color: var(--text-color);
-  line-height: 1.6;
-  font-size: var(--body-size);
-}
-
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-}
-
-/* Başlık Stilleri */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--heading-font);
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: var(--spacing-sm);
-}
-
-h1 { font-size: var(--h1-size); }
-h2 { font-size: var(--h2-size); }
-h3 { font-size: var(--h3-size); }
-
-/* Buton Stilleri */
-.btn {
-  display: inline-block;
-  padding: var(--spacing-sm) var(--spacing-md);
-  border-radius: var(--border-radius-sm);
-  text-decoration: none;
-  transition: var(--transition-normal);
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-}
-
-.btn-primary {
-  background-color: var(--primary-color);
-  color: var(--white);
-}
-
-.btn-primary:hover {
-  background-color: darken(var(--primary-color), 10%);
-}
-.btn {
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-        .btn-outline {
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-            background: transparent;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-color);
-            color: white;
-        }
-
-        .car-detail {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .breadcrumb {
-            margin-bottom: 2rem;
-            color: #666;
-        }
-
-        .car-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-        }
-
-        .car-image {
-            width: 100%;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .car-image img {
-            width: 100%;
-            height: auto;
-        }
-
-        .car-info {
-            padding: 1rem;
-        }
-
-        .car-title {
-            font-size: 1.8rem;
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .car-tags {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tag {
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            background-color: #FFE8E9;
-            color: var(--primary-color);
-        }
-
-        .car-specs {
-            display: flex;
-            gap: 1rem;
-            margin: 2rem 0;
-        }
-
-        .spec-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem 1rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-        }
-
-        .price-section {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background-color: var(--light-gray);
-            border-radius: 12px;
-        }
-
-        .price-title {
-            font-size: 1.2rem;
-            color: #666;
-        }
-
-        .price-amount {
-            font-size: 2rem;
-            color: var(--secondary-color);
-            font-weight: bold;
-            margin: 0.5rem 0;
-        }
-
-        .price-details {
-            font-size: 0.9rem;
-            color: #666;
-        }
-
-        .views {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #666;
-            margin-bottom: 1rem;
-        }
-
-        .views i {
-            color: #4BB4F8;
-        }
-
-
-        .security-info {
-            margin-top: 2rem;
-            padding: 1.5rem;
-            background-color: #F8F9FA;
-            border-radius: 12px;
-            border: 1px solid #E9ECEF;
-        }
-
-        .security-info h3 {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-        }
-
-        .security-info p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .action-buttons {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .share-button {
-            padding: 0.8rem;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            background: white;
-            cursor: pointer;
-        }
-
-        .share-button i {
-            color: #666;
-        }
-
-        /* Yeni stiller */
-        .car-gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .gallery-item {
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            cursor: pointer;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100px;
-            object-fit: cover;
-        }
-
-        .tabs {
-            margin-top: 3rem;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .tab-buttons {
-            display: flex;
-            gap: 2rem;
-            margin-bottom: -1px;
-        }
-
-        .tab-btn {
-            padding: 1rem 2rem;
-            border: none;
-            background: none;
-            cursor: pointer;
-            font-weight: 600;
-            color: #666;
-            border-bottom: 3px solid transparent;
-        }
-
-        .tab-btn.active {
-            color: var(--primary-color);
-            border-bottom-color: var(--primary-color);
-        }
-
-        .tab-content {
-            padding: 2rem 0;
-        }
-
-        .specs-table {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        .specs-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .specs-table td:first-child {
-            font-weight: 600;
-            width: 30%;
-        }
-
-        .installment-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1rem 0;
-        }
-
-        .installment-table th,
-        .installment-table td {
-            padding: 1rem;
-            border: 1px solid #eee;
-            text-align: center;
-        }
-
-        .installment-table th {
-            background-color: var(--light-gray);
-            font-weight: 600;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin: 1rem 0;
-        }
-
-        .feature-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.5rem;
-        }
-
-        .feature-item i {
-            color: var(--primary-color);
-        }
-    </style>
-        <div id="header-container"></div>
-
+    <link rel="stylesheet" href="assets/css/cardetails.css">
+    <div id="header-container"></div>
 </head>
 <body>
    
     <main class="car-detail">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+            <a href="index.html">Ana Sayfa</a>
+            <i class="fas fa-chevron-right"></i>
+            <a href="cars.html">Araçlar</a>
+            <i class="fas fa-chevron-right"></i>
+            <span>HYUNDAI i20 Yıllık Araç Kiralama</span>
+        </div>
+        
         <div class="car-container">
             <div class="car-image">
-                <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier">
+                <!-- Ana Swiper -->
+                <div class="swiper main-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="HYUNDAI i20 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="HYUNDAI i20 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="HYUNDAI i20 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="HYUNDAI i20 4">
+                        </div>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
                 
-                <div class="car-gallery">
-                    <div class="gallery-item">
-                        <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier 1">
+                <!-- Mini Görseller Swiper -->
+                <div class="swiper mini-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="HYUNDAI i20 1">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="HYUNDAI i20 2">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="HYUNDAI i20 3">
+                        </div>
+                        <div class="swiper-slide">
+                            <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="HYUNDAI i20 4">
+                        </div>
                     </div>
-                    <div class="gallery-item">
-                        <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier 2">
+                </div>
+
+                <!-- Güvenlik Bilgisi ve Butonlar -->
+                <div class="image-bottom-content">
+                    <div class="security-info">
+                        <h3>"0 KM" Aracını Hedef Filo Güvencesiyle Kirala</h3>
+                        <p>Filomingo'dan uzun dönem aracını kiraladıktan sonra, Hedef Filo'nun tüm Türkiye'deki hasar-arıza servis ağından faydalanın; ikame araç, lastik değişimi, HGS gibi hizmetleri Hedef Filo profesyonelliği ile alırsın.</p>
                     </div>
-                    <div class="gallery-item">
-                        <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier 3">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="https://www.otokoc.com.tr/getmedia/763d2040-7e9d-4ec6-8c73-87ab6327fe34/tourneo-courier-650x364.webp?ext=.webp" alt="Ford Tourneo Courier 4">
+
+                    <div class="action-buttons">
+                        <button class="btn btn-primary btn-apply">
+                            <i class="fas fa-file-signature" style="margin-right: 0.5rem;"></i>
+                            Başvuru Formu Gönder
+                        </button>
                     </div>
                 </div>
             </div>
@@ -388,13 +86,9 @@ h3 { font-size: var(--h3-size); }
                 <h1 class="car-title">HYUNDAI i20 Yıllık Araç Kiralama</h1>
                 
                 <div class="car-tags">
-                    <span class="tag">Kampanyalı Araç</span>
-                    <span class="tag">Hızlı Teslimat</span>
-                </div>
-
-                <div class="views">
-                    <i class="fas fa-eye"></i>
-                    <span>92 kişi tarafından görüntülendi</span>
+                    <span class="tag"><i class="fas fa-bolt"></i> Kampanyalı Araç</span>
+                    <span class="tag"><i class="fas fa-clock"></i> Hızlı Teslimat</span>
+                    <span class="tag"><i class="fas fa-star"></i> En Çok Tercih Edilen</span>
                 </div>
 
                 <div class="car-specs">
@@ -422,26 +116,9 @@ h3 { font-size: var(--h3-size); }
                     <div class="price-details">'den başlayan fiyatlar + KDV</div>
                     <div class="price-note">(36 Ay Vadeli, Yıllık 10000 KM, 880.000 + KDV Peşinat)</div>
                     
-                    <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 1.5rem;">
                         Hızlı Teklif Oluştur
                         <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
-                    </button>
-                </div>
-
-                <div class="security-info">
-                    <h3>"0 KM" Aracını Hedef Filo Güvencesiyle Kirala</h3>
-                    <p>Filomingo'dan uzun dönem aracını kiraladıktan sonra, Hedef Filo'nun tüm Türkiye'deki hasar-arıza servis ağından faydalanın; ikame araç, lastik değişimi, HGS gibi hizmetleri Hedef Filo profesyonelliği ile alırsın.</p>
-                </div>
-
-                <div class="action-buttons">
-                    <button class="btn btn-primary" style="flex: 1;">
-                        Başvuru Formu Gönder
-                    </button>
-                    <button class="share-button">
-                        <i class="fas fa-share-alt"></i>
-                    </button>
-                    <button class="share-button">
-                        <i class="fas fa-exchange-alt"></i>
                     </button>
                 </div>
             </div>
@@ -449,37 +126,59 @@ h3 { font-size: var(--h3-size); }
 
         <div class="tabs">
             <div class="tab-buttons">
-                <button class="tab-btn active">Teknik Özellikler</button>
-                <button class="tab-btn">Taksit Seçenekleri</button>
-                <button class="tab-btn">Donanım Özellikleri</button>
-                <button class="tab-btn">Kiralama Koşulları</button>
+                <button class="tab-btn active" data-tab="specs">Teknik Özellikler</button>
+                <button class="tab-btn" data-tab="installment">Taksit Seçenekleri</button>
+                <button class="tab-btn" data-tab="features">Donanım Özellikleri</button>
+                <button class="tab-btn" data-tab="conditions">Kiralama Koşulları</button>
             </div>
 
             <div class="tab-content">
-                <table class="specs-table">
-                    <tr>
-                        <td>Motor</td>
-                        <td>1.5L EcoBlue Dizel Motor</td>
-                    </tr>
-                    <tr>
-                        <td>Güç</td>
-                        <td>100 PS</td>
-                    </tr>
-                    <tr>
-                        <td>Şanzıman</td>
-                        <td>6 İleri Otomatik</td>
-                    </tr>
-                    <tr>
-                        <td>Yakıt Tüketimi</td>
-                        <td>5.4L/100km (Karma)</td>
-                    </tr>
-                    <tr>
-                        <td>Bagaj Hacmi</td>
-                        <td>1656 Litre</td>
-                    </tr>
-                </table>
+                <div id="specs" class="tab-pane active">
+                    <table class="specs-table">
+                        <tr>
+                            <td>Motor</td>
+                            <td>1.5L EcoBlue Dizel Motor</td>
+                        </tr>
+                        <tr>
+                            <td>Güç</td>
+                            <td>100 PS</td>
+                        </tr>
+                        <tr>
+                            <td>Şanzıman</td>
+                            <td>6 İleri Otomatik</td>
+                        </tr>
+                        <tr>
+                            <td>Yakıt Tüketimi</td>
+                            <td>5.4L/100km (Karma)</td>
+                        </tr>
+                        <tr>
+                            <td>Bagaj Hacmi</td>
+                            <td>1656 Litre</td>
+                        </tr>
+                        <tr>
+                            <td>0-100 km/s Hızlanma</td>
+                            <td>11.2 saniye</td>
+                        </tr>
+                        <tr>
+                            <td>Maksimum Hız</td>
+                            <td>175 km/s</td>
+                        </tr>
+                        <tr>
+                            <td>Uzunluk</td>
+                            <td>4.16 metre</td>
+                        </tr>
+                        <tr>
+                            <td>Genişlik</td>
+                            <td>1.75 metre</td>
+                        </tr>
+                        <tr>
+                            <td>Yükseklik</td>
+                            <td>1.59 metre</td>
+                        </tr>
+                    </table>
+                </div>
 
-                <div class="installment-options" style="display: none;">
+                <div id="installment" class="tab-pane">
                     <table class="installment-table">
                         <tr>
                             <th>Vade</th>
@@ -505,94 +204,692 @@ h3 { font-size: var(--h3-size); }
                             <td>880.000 TL</td>
                             <td>2.047.840 TL</td>
                         </tr>
+                        <tr>
+                            <td>48 Ay</td>
+                            <td>31.240 TL</td>
+                            <td>880.000 TL</td>
+                            <td>2.379.520 TL</td>
+                        </tr>
                     </table>
-                </div>
-
-                <div class="features-grid" style="display: none;">
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>LED Gündüz Farları</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Yokuş Kalkış Desteği</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Apple CarPlay & Android Auto</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Geri Görüş Kamerası</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Şerit Takip Sistemi</span>
-                    </div>
-                    <div class="feature-item">
-                        <i class="fas fa-check-circle"></i>
-                        <span>Adaptif Hız Sabitleyici</span>
+                    
+                    <div style="margin-top: 2rem; text-align: center;">
+                        <button class="btn btn-primary">
+                            <i class="fas fa-calculator" style="margin-right: 0.5rem;"></i>
+                            Ödeme Planı Oluştur
+                        </button>
                     </div>
                 </div>
 
-                <div class="rental-conditions" style="display: none;">
-                    <h3>Kiralama Koşulları</h3>
-                    <ul style="list-style: none; margin-top: 1rem;">
-                        <li style="margin-bottom: 0.5rem;">
-                            <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
-                            Minimum kiralama süresi 12 aydır
-                        </li>
-                        <li style="margin-bottom: 0.5rem;">
-                            <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
-                            Yıllık km sınırı 10.000 km'dir
-                        </li>
-                        <li style="margin-bottom: 0.5rem;">
-                            <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
-                            Kasko, trafik sigortası ve bakım ücretleri dahildir
-                        </li>
-                        <li style="margin-bottom: 0.5rem;">
-                            <i class="fas fa-info-circle" style="color: var(--primary-color); margin-right: 0.5rem;"></i>
-                            Lastik değişimi yılda 1 kez ücretsizdir
-                        </li>
-                    </ul>
+                <div id="features" class="tab-pane">
+                    <div class="features-grid">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>LED Gündüz Farları</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Yokuş Kalkış Desteği</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Apple CarPlay & Android Auto</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Geri Görüş Kamerası</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Şerit Takip Sistemi</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Adaptif Hız Sabitleyici</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Anahtarsız Giriş & Çalıştırma</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Otomatik Klima</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Bluetooth Bağlantısı</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>USB Girişi</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>16" Alaşım Jantlar</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Elektronik Denge Programı (ESP)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="conditions" class="tab-pane">
+                    <div class="rental-conditions">
+                        <h3>Kiralama Koşulları</h3>
+                        <ul>
+                            <li>
+                                <i class="fas fa-info-circle"></i>
+                                <span>Minimum kiralama süresi 12 aydır</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-info-circle"></i>
+                                <span>Yıllık km sınırı 10.000 km'dir</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-info-circle"></i>
+                                <span>Kasko, trafik sigortası ve bakım ücretleri dahildir</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-info-circle"></i>
+                                <span>Lastik değişimi yılda 1 kez ücretsizdir</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-info-circle"></i>
+                                <span>Kredi notunuza göre peşinat miktarı değişebilir</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-info-circle"></i>
+                                <span>Aracın güncel fiyatları için lütfen müşteri temsilcisi ile görüşünüz</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </main>
 
+    <!-- Lightbox -->
+    <div class="lightbox">
+        <div class="lightbox-content">
+            <span class="lightbox-close">&times;</span>
+            <span class="lightbox-prev"><i class="fas fa-chevron-left"></i></span>
+            <img class="lightbox-img" src="" alt="Araç Görseli">
+            <span class="lightbox-next"><i class="fas fa-chevron-right"></i></span>
+        </div>
+    </div>
+
+    <!-- Teklif Oluştur Modal -->
+    <div id="teklifModal" class="teklif-modal">
+        <div class="teklif-modal-content">
+            <span class="teklif-modal-close">&times;</span>
+            <div class="teklif-header">
+                <h2>Kurumsal Teklif Oluştur</h2>
+            </div>
+            
+            <div class="teklif-steps">
+                <div class="step-item active" data-step="1">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Şirket Bilgileri</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" data-step="2">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Kiralama Tercihleri</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" data-step="3">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Ek Hizmetler</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" data-step="4">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Özet ve Onay</div>
+                </div>
+            </div>
+            
+            <div class="teklif-car-info">
+                <h3>HYUNDAI i20 Yıllık Araç Kiralama</h3>
+            </div>
+            
+            <div class="teklif-content">
+                <!-- Adım 1: Şirket Bilgileri -->
+                <div id="step1" class="step-content active">
+                    <div class="teklif-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firmaAdi">Firma Adı*</label>
+                                <input type="text" id="firmaAdi" class="form-control" placeholder="Firmanızın tam unvanı">
+                            </div>
+                            <div class="form-group">
+                                <label for="firmaTipi">Firma Tipi*</label>
+                                <div class="custom-select">
+                                    <select id="firmaTipi">
+                                        <option value="">Seçiniz</option>
+                                        <option value="limited">Limited Şirket</option>
+                                        <option value="anonim">Anonim Şirket</option>
+                                        <option value="sahis">Şahıs Şirketi</option>
+                                        <option value="kamu">Kamu Kurumu</option>
+                                        <option value="diger">Diğer</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="vergiDairesi">Vergi Dairesi*</label>
+                                <input type="text" id="vergiDairesi" class="form-control" placeholder="Vergi dairesi">
+                            </div>
+                            <div class="form-group">
+                                <label for="vergiNo">Vergi No*</label>
+                                <input type="text" id="vergiNo" class="form-control" placeholder="Vergi numarası">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firmaAdresi">Firma Adresi*</label>
+                                <textarea id="firmaAdresi" class="form-control" placeholder="Firmanızın açık adresi"></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="sehir">Şehir*</label>
+                                <div class="custom-select">
+                                    <select id="sehir">
+                                        <option value="">Seçiniz</option>
+                                        <option value="istanbul">İstanbul</option>
+                                        <option value="ankara">Ankara</option>
+                                        <option value="izmir">İzmir</option>
+                                        <option value="bursa">Bursa</option>
+                                        <option value="antalya">Antalya</option>
+                                        <option value="diger">Diğer</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="calısanSayisi">Çalışan Sayısı</label>
+                                <div class="custom-select">
+                                    <select id="calısanSayisi">
+                                        <option value="">Seçiniz</option>
+                                        <option value="1-10">1-10</option>
+                                        <option value="11-50">11-50</option>
+                                        <option value="51-100">51-100</option>
+                                        <option value="101-250">101-250</option>
+                                        <option value="251+">251+</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-title">Yetkili Kişi Bilgileri</div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="yetkiliAdSoyad">Ad Soyad*</label>
+                                <input type="text" id="yetkiliAdSoyad" class="form-control" placeholder="Yetkili kişinin adı soyadı">
+                            </div>
+                            <div class="form-group">
+                                <label for="yetkiliUnvan">Unvan*</label>
+                                <input type="text" id="yetkiliUnvan" class="form-control" placeholder="Yetkili kişinin unvanı">
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="yetkiliTelefon">Telefon*</label>
+                                <input type="tel" id="yetkiliTelefon" class="form-control" placeholder="5XX XXX XX XX">
+                            </div>
+                            <div class="form-group">
+                                <label for="yetkiliEposta">E-posta*</label>
+                                <input type="email" id="yetkiliEposta" class="form-control" placeholder="ornek@firma.com">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-title">Filo Bilgileri</div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="mevcutFiloAdet">Mevcut Filo Araç Sayısı</label>
+                                <div class="custom-select">
+                                    <select id="mevcutFiloAdet">
+                                        <option value="">Seçiniz</option>
+                                        <option value="0">Filo aracımız yok</option>
+                                        <option value="1-5">1-5</option>
+                                        <option value="6-10">6-10</option>
+                                        <option value="11-20">11-20</option>
+                                        <option value="21-50">21-50</option>
+                                        <option value="51+">51+</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="musteriSegment">Müşteri Segmenti</label>
+                                <div class="custom-select">
+                                    <select id="musteriSegment">
+                                        <option value="">Seçiniz</option>
+                                        <option value="yeni">Yeni Müşteri</option>
+                                        <option value="mevcut">Mevcut Müşteri</option>
+                                        <option value="premium">Premium Müşteri</option>
+                                        <option value="vip">VIP Müşteri</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="kargoTeslimat">Araç Teslim Lokasyonu*</label>
+                                <div class="custom-select">
+                                    <select id="kargoTeslimat">
+                                        <option value="">Seçiniz</option>
+                                        <option value="firma">Firma Adresimize</option>
+                                        <option value="sube">En Yakın Şubenizden Teslim Alacağız</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-note">
+                            <i class="fas fa-info-circle"></i>
+                            <span>* ile işaretli alanlar zorunludur.</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adım 2: Kiralama Tercihleri -->
+                <div id="step2" class="step-content">
+                    <div class="teklif-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="renk">Araç Renk Tercihi</label>
+                                <div class="custom-select">
+                                    <select id="renk">
+                                        <option value="teslimatta">Teslimat Aşamasında Belirlenecek</option>
+                                        <option value="beyaz">Beyaz</option>
+                                        <option value="gri">Gri</option>
+                                        <option value="siyah">Siyah</option>
+                                        <option value="mavi">Mavi</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="vade">Kiralama Süresi (Ay)</label>
+                                <div class="custom-select">
+                                    <select id="vade">
+                                        <option value="12">12 Ay</option>
+                                        <option value="24">24 Ay</option>
+                                        <option value="36" selected>36 Ay</option>
+                                        <option value="48">48 Ay</option>
+                                        <option value="60">60 Ay</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="yillikKm">Yıllık KM Sınırı</label>
+                                <div class="custom-select">
+                                    <select id="yillikKm">
+                                        <option value="10000" selected>10.000 KM</option>
+                                        <option value="15000">15.000 KM</option>
+                                        <option value="20000">20.000 KM</option>
+                                        <option value="25000">25.000 KM</option>
+                                        <option value="30000">30.000 KM</option>
+                                        <option value="unlimited">Sınırsız</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="kaskoTercihi">Kasko Tercihi</label>
+                                <div class="custom-select">
+                                    <select id="kaskoTercihi">
+                                        <option value="fullKasko" selected>Full Kasko</option>
+                                        <option value="darKapsamli">Dar Kapsamlı Kasko</option>
+                                        <option value="genisKapsamli">Geniş Kapsamlı Kasko</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-title">Araç Detayları</div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="aracAdet">Araç Adedi</label>
+                                <div class="number-input">
+                                    <button type="button" class="number-minus">-</button>
+                                    <input type="number" id="aracAdet" min="1" max="100" value="1">
+                                    <button type="button" class="number-plus">+</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="kisLastigi">Kış Lastiği</label>
+                                <div class="custom-select">
+                                    <select id="kisLastigi">
+                                        <option value="var" selected>Var (Dahil)</option>
+                                        <option value="yok">Yok</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="teslimTarihi">Tahmini Teslim Tarihi</label>
+                                <input type="date" id="teslimTarihi" class="form-control" min="2023-01-01">
+                            </div>
+                            <div class="form-group">
+                                <label for="teslimatSehir">Teslimat Şehri</label>
+                                <div class="custom-select">
+                                    <select id="teslimatSehir">
+                                        <option value="">Seçiniz</option>
+                                        <option value="istanbul">İstanbul</option>
+                                        <option value="ankara">Ankara</option>
+                                        <option value="izmir">İzmir</option>
+                                        <option value="bursa">Bursa</option>
+                                        <option value="antalya">Antalya</option>
+                                        <option value="diger">Diğer</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-title">Kurumsal Fiyatlandırma Bilgileri</div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fiyatlandirmaTipi">Fiyatlandırma Tipi</label>
+                                <div class="custom-select">
+                                    <select id="fiyatlandirmaTipi">
+                                        <option value="standart" selected>Standart Kurumsal Fiyatlandırma</option>
+                                        <option value="ozel">Özel Müşteri Fiyatlandırması</option>
+                                        <option value="toplu">Toplu Alım İndirimi</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="faturalama">Faturalama Dönemi</label>
+                                <div class="custom-select">
+                                    <select id="faturalama">
+                                        <option value="aylik" selected>Aylık</option>
+                                        <option value="ucaylik">3 Aylık</option>
+                                        <option value="yillik">Yıllık</option>
+                                    </select>
+                                    <i class="fas fa-chevron-down"></i>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="kurumsal-fiyat-bilgi">
+                            <div class="kurumsal-fiyat-icon">
+                                <i class="fas fa-percentage"></i>
+                            </div>
+                            <div class="kurumsal-fiyat-metin">
+                                <h4>Kurumsal Müşteri Avantajı</h4>
+                                <p>Şirketinizin büyüklüğü ve filo adedine göre özel fiyatlandırma uygulanmaktadır. Kurumsal müşteri temsilciniz sizi arayarak en uygun teklifi sunacaktır.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adım 3: Ek Hizmetler -->
+                <div id="step3" class="step-content">
+                    <div class="teklif-form">
+                        <div class="form-group-title">Sürüş ve Güvenlik Hizmetleri</div>
+                        
+                        <div class="checkbox-card">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="ikameArac" class="custom-checkbox">
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="checkbox-content">
+                                <div class="checkbox-title">
+                                    <span>Kurumsal İkame Araç Hizmeti</span>
+                                    <span class="checkbox-price">+750 TL/ay</span>
+                                </div>
+                                <div class="checkbox-description">
+                                    Aracınız servisteyken, şirketinize özel ikame araç hizmeti. Bakım ve onarım süreçlerinde aynı segment araç tahsis edilir. Kurumsal müşterilere özel 24 saat içinde teslimat garantisi.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-card">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="yolYardim" class="custom-checkbox">
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="checkbox-content">
+                                <div class="checkbox-title">
+                                    <span>Premium Yol Yardım Paketi</span>
+                                    <span class="checkbox-price">+350 TL/ay</span>
+                                </div>
+                                <div class="checkbox-description">
+                                    Araç arızası, kaza, lastik patlaması gibi durumlarda 7/24 öncelikli yol yardım hizmeti. Türkiye'nin her yerinde geçerlidir. Kurumsal müşteriler için özel hızlı müdahale süresi.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-card">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="soforHizmet" class="custom-checkbox">
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="checkbox-content">
+                                <div class="checkbox-title">
+                                    <span>Profesyonel Şoför Hizmeti</span>
+                                    <span class="checkbox-price">+3.500 TL/ay</span>
+                                </div>
+                                <div class="checkbox-description">
+                                    Aylık 120 saate kadar profesyonel şoför hizmeti. Özel eğitimli, kurumsal tecrübeli ve İngilizce bilen şoförlerle hizmet. Ek saatler için uygun fiyatlandırma.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group-title">Bakım ve Yönetim Hizmetleri</div>
+                        
+                        <div class="checkbox-card">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="hgs" class="custom-checkbox">
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="checkbox-content">
+                                <div class="checkbox-title">
+                                    <span>Kurumsal HGS/OGS Yönetimi</span>
+                                    <span class="checkbox-price">+150 TL/ay</span>
+                                </div>
+                                <div class="checkbox-description">
+                                    Otomatik HGS/OGS yüklemesi yapılır, geçiş ücretleri aylık olarak faturalandırılır. Aylık detaylı rapor ve yönetim paneli erişimi sağlanır.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-card">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="premium" class="custom-checkbox">
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="checkbox-content">
+                                <div class="checkbox-title">
+                                    <span>Kurumsal Premium Bakım Paketi</span>
+                                    <span class="checkbox-price">+900 TL/ay</span>
+                                </div>
+                                <div class="checkbox-description">
+                                    Standart bakımların yanı sıra, detaylı motor bakımı, klima bakımı ve aylık detaylı iç-dış temizlik hizmeti. İş yerinizde bakım ve temizlik hizmeti.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="checkbox-card">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="filoPlatform" class="custom-checkbox">
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="checkbox-content">
+                                <div class="checkbox-title">
+                                    <span>Filo Yönetim Platformu</span>
+                                    <span class="checkbox-price">+500 TL/ay</span>
+                                </div>
+                                <div class="checkbox-description">
+                                    Web ve mobil uygulama üzerinden araç takibi, yakıt analizi, sürüş davranışı raporlama, bakım takvimi ve maliyet yönetimi. Aylık detaylı raporlandırma.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Adım 4: Özet ve Onay -->
+                <div id="step4" class="step-content">
+                    <div class="teklif-form">
+                        <div class="ozet-baslik">
+                            <h3>Teklifiniz Hazır!</h3>
+                            <p>Lütfen teklif bilgilerinizi gözden geçirin. Onayladıktan sonra kurumsal satış temsilcimiz sizinle iletişime geçecektir.</p>
+                        </div>
+                        
+                        <div class="ozet-bolum">
+                            <h4>Şirket Bilgileri</h4>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Firma Adı:</span>
+                                <span class="ozet-deger" id="ozet-firma-adi">-</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Vergi No / Daire:</span>
+                                <span class="ozet-deger" id="ozet-vergi-bilgisi">-</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Yetkili Kişi:</span>
+                                <span class="ozet-deger" id="ozet-yetkili">-</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">İletişim:</span>
+                                <span class="ozet-deger" id="ozet-iletisim">-</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ozet-bolum">
+                            <h4>Araç ve Kiralama Bilgileri</h4>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Araç:</span>
+                                <span class="ozet-deger">HYUNDAI i20 1.5L EcoBlue Dizel Motor</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Kiralama Süresi:</span>
+                                <span class="ozet-deger" id="ozet-vade">36 Ay</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Yıllık KM:</span>
+                                <span class="ozet-deger" id="ozet-km">10.000 KM</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Araç Adedi:</span>
+                                <span class="ozet-deger" id="ozet-adet">1</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Renk:</span>
+                                <span class="ozet-deger" id="ozet-renk">Teslimat Aşamasında Belirlenecek</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Kasko:</span>
+                                <span class="ozet-deger" id="ozet-kasko">Full Kasko</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Kış Lastiği:</span>
+                                <span class="ozet-deger" id="ozet-kis-lastik">Var (Dahil)</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Tahmini Teslim:</span>
+                                <span class="ozet-deger" id="ozet-teslim-tarih">-</span>
+                            </div>
+                        </div>
+                        
+                        <div class="ozet-bolum">
+                            <h4>Seçilen Ek Hizmetler</h4>
+                            <ul class="ozet-liste" id="ozet-hizmetler">
+                                <li class="bos-mesaj">Seçilen ek hizmet bulunmamaktadır.</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="ozet-bolum fiyat-ozeti">
+                            <h4>Fiyat Özeti</h4>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Aylık Araç Kirası:</span>
+                                <span class="ozet-deger">32.440 TL</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Ek Hizmetler:</span>
+                                <span class="ozet-deger" id="ozet-ek-hizmet-tutar">0 TL</span>
+                            </div>
+                            <div class="ozet-satir">
+                                <span class="ozet-etiket">Kurumsal İndirim:</span>
+                                <span class="ozet-deger" id="ozet-kurumsal-indirim">Temsilci tarafından belirlenecek</span>
+                            </div>
+                            <div class="ozet-satir toplam">
+                                <span class="ozet-etiket">Tahmini Aylık Toplam:</span>
+                                <span class="ozet-deger buyuk">32.440 TL + KDV</span>
+                            </div>
+                            <div class="ozet-not">
+                                * Fiyatlar tahmini olup, son fiyat müşteri temsilciniz tarafından portföyünüze özel olarak belirlenecektir.
+                            </div>
+                        </div>
+                        
+                        <div class="ozet-bolum">
+                            <h4>Ek Notlar</h4>
+                            <textarea class="form-control" id="notlar" placeholder="Eklemek istediğiniz notlar varsa yazabilirsiniz..."></textarea>
+                        </div>
+                        
+                        <div class="onay-kutusu">
+                            <div class="checkbox-wrapper">
+                                <input type="checkbox" id="onayCheckbox" class="custom-checkbox">
+                                <span class="checkmark"></span>
+                            </div>
+                            <div class="onay-metni">
+                                Yukarıdaki bilgilerin doğru olduğunu, kiralama koşullarını ve <a href="#">Kişisel Verilerin Korunması</a> hakkındaki bilgilendirmeyi okuduğumu ve kabul ettiğimi beyan ederim. Kurumsal müşteri temsilcisinin benimle iletişime geçmesine onay veriyorum.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="teklif-price">
+                <div class="price-label">Aylık Kira Tutarı</div>
+                <div class="price-amount">32.440 <span>TL + KDV</span></div>
+            </div>
+            
+            <div class="teklif-actions">
+                <button id="btnGeri" class="btn btn-geri" style="display: none;">
+                    <i class="fas fa-arrow-left" style="margin-right: 0.5rem;"></i>
+                    Geri
+                </button>
+                <button id="btnDevam" class="btn btn-primary btn-devam">
+                    Devam
+                    <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="footer-container"></div>
+    <script src="assets/js/header.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // Tab sistemi için JavaScript
-        const tabButtons = document.querySelectorAll('.tab-btn');
-        const tabContents = document.querySelectorAll('.tab-content > div');
-
-        tabButtons.forEach((button, index) => {
-            button.addEventListener('click', () => {
-                // Aktif tab butonunu değiştir
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                // İlgili içeriği göster
-                tabContents.forEach(content => content.style.display = 'none');
-                tabContents[index].style.display = 'block';
-            });
-        });
-
-        // İlk tabı aktif et
-        tabContents[0].style.display = 'block';
-        tabContents.forEach((content, index) => {
-            if (index > 0) content.style.display = 'none';
-        });
-    </script>
-</body>
-<div id="footer-container"></div>
-
-
-<!-- Scripts -->
-<script src="assets/js/main.js"></script>
-<script src="assets/js/header.js"></script>
-<script>
-  // Load components
-  fetch('components/header.html')
+        fetch('components/header.html')
     .then(response => response.text())
     .then(data => {
       document.getElementById('header-container').innerHTML = data;
@@ -603,5 +900,460 @@ h3 { font-size: var(--h3-size); }
     .then(data => {
       document.getElementById('footer-container').innerHTML = data;
     });
-</script>
+        // Teklif adımları arası geçiş fonksiyonları
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal ve buton elementlerini al
+            const teklifModal = document.getElementById('teklifModal');
+            const teklifButtons = document.querySelectorAll('.btn-primary');
+            const teklifClose = document.querySelector('.teklif-modal-close');
+            const btnDevam = document.getElementById('btnDevam');
+            const btnGeri = document.getElementById('btnGeri');
+            const stepItems = document.querySelectorAll('.step-item');
+            const contentDivs = document.querySelectorAll('.step-content');
+            
+            let currentStep = 1;
+            
+            // Sayfa yüklendiğinde tüm adımları gizle
+            contentDivs.forEach(content => {
+                content.classList.remove('active');
+                content.style.display = 'none';
+            });
+            
+            // Sadece ilk adımı göster
+            const firstStep = document.getElementById('step1');
+            if (firstStep) {
+                firstStep.classList.add('active');
+                firstStep.style.display = 'block';
+            }
+            
+            // Modalı açma
+            teklifButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    teklifModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Sayfanın scrollunu engelleme
+                    
+                    // Tüm adımları gizle ve sadece ilk adımı göster
+                    contentDivs.forEach(content => {
+                        content.classList.remove('active');
+                        content.style.display = 'none';
+                    });
+                    
+                    const firstStep = document.getElementById('step1');
+                    if (firstStep) {
+                        firstStep.classList.add('active');
+                        firstStep.style.display = 'block';
+                    }
+                    
+                    // Adım göstergelerini sıfırla
+                    stepItems.forEach(item => {
+                        item.classList.remove('active');
+                        item.classList.remove('completed');
+                    });
+                    
+                    // İlk adımı aktif yap
+                    const firstStepIndicator = document.querySelector('.step-item[data-step="1"]');
+                    if (firstStepIndicator) {
+                        firstStepIndicator.classList.add('active');
+                    }
+                    
+                    currentStep = 1;
+                    
+                    // Geri butonunu gizle
+                    btnGeri.style.display = 'none';
+                    
+                    // Devam butonunu göster
+                    btnDevam.innerHTML = 'Devam <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>';
+                });
+            });
+            
+            // Modalı kapatma
+            teklifClose.addEventListener('click', () => {
+                teklifModal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Sayfanın scrollunu serbest bırakma
+            });
+            
+            // Modal dışına tıklayınca kapatma
+            window.addEventListener('click', (e) => {
+                if (e.target === teklifModal) {
+                    teklifModal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // İleri ve geri butonlarına tıklama
+            btnDevam.addEventListener('click', goToNextStep);
+            btnGeri.addEventListener('click', goToPreviousStep);
+            
+            // Adımlar arasında ileri gitme
+            function goToNextStep() {
+                // Şu anki adımdaki verileri kaydet
+                saveCurrentStepData();
+                
+                // Son adımda ise işlemi tamamla
+                if (currentStep === 4) {
+                    submitForm();
+                    return;
+                }
+                
+                // Bir sonraki adıma geç
+                goToStep(currentStep + 1);
+            }
+            
+            // Adımlar arasında geri gitme
+            function goToPreviousStep() {
+                if (currentStep > 1) {
+                    goToStep(currentStep - 1);
+                }
+            }
+            
+            // Belirli bir adıma gitme
+            function goToStep(step) {
+                // Geçersiz adım kontrolü
+                if (step < 1 || step > 4) {
+                    console.error("Geçersiz adım:", step);
+                    return;
+                }
+                
+                try {
+                    console.log("Geçiş yapılıyor: Adım " + step);
+                    
+                    // Tüm adımları sıfırla
+                    stepItems.forEach(item => {
+                        item.classList.remove('active');
+                        item.classList.remove('completed');
+                    });
+                    
+                    // Önceki adımları tamamlanmış olarak işaretle
+                    for (let i = 1; i < step; i++) {
+                        const prevStep = document.querySelector(`.step-item[data-step="${i}"]`);
+                        if (prevStep) prevStep.classList.add('completed');
+                    }
+                    
+                    // Şu anki adımı aktif yap
+                    const activeStep = document.querySelector(`.step-item[data-step="${step}"]`);
+                    if (activeStep) activeStep.classList.add('active');
+                    
+                    // İçeriği güncelle
+                    contentDivs.forEach(content => {
+                        content.classList.remove('active');
+                        content.style.display = 'none';
+                    });
+                    
+                    const currentContent = document.getElementById(`step${step}`);
+                    if (currentContent) {
+                        currentContent.classList.add('active');
+                        currentContent.style.display = 'block';
+                    } else {
+                        console.error(`Adım içeriği bulunamadı: step${step}`);
+                    }
+                    
+                    // Butonları güncelle
+                    if (step === 1) {
+                        btnGeri.style.display = 'none';
+                    } else {
+                        btnGeri.style.display = 'block';
+                    }
+                    
+                    // Son adımda buton metnini değiştir
+                    if (step === 4) {
+                        // Özet sayfasını güncelle
+                        if (typeof updateSummary === 'function') {
+                            updateSummary();
+                        }
+                        btnDevam.innerHTML = 'Teklifi Gönder <i class="fas fa-check" style="margin-left: 0.5rem;"></i>';
+                    } else {
+                        btnDevam.innerHTML = 'Devam <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>';
+                    }
+                    
+                    currentStep = step;
+                } catch (error) {
+                    console.error("Adım geçiş hatası:", error);
+                }
+            }
+            
+            // Şu anki adımın verilerini kaydet
+            function saveCurrentStepData() {
+                switch (currentStep) {
+                    case 1:
+                        // Şirket bilgileri
+                        formData.firmaAdi = document.getElementById('firmaAdi').value;
+                        formData.firmaTipi = document.getElementById('firmaTipi').value;
+                        formData.vergiDairesi = document.getElementById('vergiDairesi').value;
+                        formData.vergiNo = document.getElementById('vergiNo').value;
+                        formData.firmaAdresi = document.getElementById('firmaAdresi').value;
+                        formData.sehir = document.getElementById('sehir').value;
+                        formData.calisanSayisi = document.getElementById('calısanSayisi').value;
+                        formData.yetkiliAdSoyad = document.getElementById('yetkiliAdSoyad').value;
+                        formData.yetkiliUnvan = document.getElementById('yetkiliUnvan').value;
+                        formData.yetkiliTelefon = document.getElementById('yetkiliTelefon').value;
+                        formData.yetkiliEposta = document.getElementById('yetkiliEposta').value;
+                        formData.mevcutFiloAdet = document.getElementById('mevcutFiloAdet').value;
+                        formData.musteriSegment = document.getElementById('musteriSegment').value;
+                        formData.kargoTeslimat = document.getElementById('kargoTeslimat').value;
+                        break;
+                    case 2:
+                        // Kiralama tercihleri
+                        formData.renk = document.getElementById('renk').value;
+                        formData.vade = document.getElementById('vade').value;
+                        formData.yillikKm = document.getElementById('yillikKm').value;
+                        formData.kaskoTercihi = document.getElementById('kaskoTercihi').value;
+                        formData.aracAdet = document.getElementById('aracAdet').value;
+                        formData.kisLastigi = document.getElementById('kisLastigi').value;
+                        formData.teslimTarihi = document.getElementById('teslimTarihi').value;
+                        formData.teslimatSehir = document.getElementById('teslimatSehir').value;
+                        formData.fiyatlandirmaTipi = document.getElementById('fiyatlandirmaTipi').value;
+                        formData.faturalama = document.getElementById('faturalama').value;
+                        break;
+                    case 3:
+                        // Ek hizmetler
+                        formData.ekHizmetler = [];
+                        formData.ekHizmetlerTutar = 0;
+                        
+                        // Tüm checkbox'ları kontrol et
+                        const checkboxes = document.querySelectorAll('.checkbox-card .custom-checkbox');
+                        checkboxes.forEach(checkbox => {
+                            if (checkbox.checked) {
+                                const title = checkbox.closest('.checkbox-card').querySelector('.checkbox-title span').textContent;
+                                const price = checkbox.closest('.checkbox-card').querySelector('.checkbox-price').textContent;
+                                
+                                formData.ekHizmetler.push({
+                                    title: title,
+                                    price: price
+                                });
+                                
+                                // Fiyatı hesapla (örn: "+750 TL/ay" -> 750)
+                                const priceValue = parseInt(price.replace(/[^0-9]/g, ''));
+                                formData.ekHizmetlerTutar += priceValue;
+                            }
+                        });
+                        break;
+                    case 4:
+                        // Özet ve onay
+                        formData.notlar = document.getElementById('notlar').value;
+                        formData.onay = document.getElementById('onayCheckbox').checked;
+                        break;
+                }
+            }
+            
+            // Form verileri objesi
+            let formData = {
+                firmaAdi: '',
+                firmaTipi: '',
+                vergiDairesi: '',
+                vergiNo: '',
+                firmaAdresi: '',
+                sehir: '',
+                calisanSayisi: '',
+                yetkiliAdSoyad: '',
+                yetkiliUnvan: '',
+                yetkiliTelefon: '',
+                yetkiliEposta: '',
+                mevcutFiloAdet: '',
+                musteriSegment: '',
+                kargoTeslimat: '',
+                renk: 'teslimatta',
+                vade: '36',
+                yillikKm: '10000',
+                kaskoTercihi: 'fullKasko',
+                aracAdet: '1',
+                kisLastigi: 'var',
+                teslimTarihi: '',
+                teslimatSehir: '',
+                fiyatlandirmaTipi: 'standart',
+                faturalama: 'aylik',
+                ekHizmetler: [],
+                ekHizmetlerTutar: 0,
+                notlar: '',
+                onay: false
+            };
+            
+            // Özet sayfasını güncelle
+            function updateSummary() {
+                // Şirket bilgileri
+                document.getElementById('ozet-firma-adi').textContent = formData.firmaAdi || '-';
+                document.getElementById('ozet-vergi-bilgisi').textContent = 
+                    (formData.vergiNo && formData.vergiDairesi) ? 
+                    `${formData.vergiNo} / ${formData.vergiDairesi}` : '-';
+                document.getElementById('ozet-yetkili').textContent = 
+                    (formData.yetkiliAdSoyad && formData.yetkiliUnvan) ? 
+                    `${formData.yetkiliAdSoyad} (${formData.yetkiliUnvan})` : '-';
+                document.getElementById('ozet-iletisim').textContent = 
+                    (formData.yetkiliTelefon && formData.yetkiliEposta) ? 
+                    `${formData.yetkiliTelefon} - ${formData.yetkiliEposta}` : '-';
+                
+                // Araç bilgileri
+                document.getElementById('ozet-vade').textContent = formData.vade ? `${formData.vade} Ay` : '36 Ay';
+                document.getElementById('ozet-km').textContent = formData.yillikKm ? `${parseInt(formData.yillikKm).toLocaleString()} KM` : '10.000 KM';
+                document.getElementById('ozet-adet').textContent = formData.aracAdet || '1';
+                
+                // Renk seçimi
+                const renkTextMap = {
+                    'teslimatta': 'Teslimat Aşamasında Belirlenecek',
+                    'beyaz': 'Beyaz',
+                    'gri': 'Gri',
+                    'siyah': 'Siyah',
+                    'mavi': 'Mavi'
+                };
+                document.getElementById('ozet-renk').textContent = renkTextMap[formData.renk] || 'Teslimat Aşamasında Belirlenecek';
+                
+                // Kasko seçimi
+                const kaskoTextMap = {
+                    'fullKasko': 'Full Kasko',
+                    'darKapsamli': 'Dar Kapsamlı Kasko',
+                    'genisKapsamli': 'Geniş Kapsamlı Kasko'
+                };
+                document.getElementById('ozet-kasko').textContent = kaskoTextMap[formData.kaskoTercihi] || 'Full Kasko';
+                
+                // Kış lastiği
+                const kisLastikTextMap = {
+                    'var': 'Var (Dahil)',
+                    'yok': 'Yok'
+                };
+                document.getElementById('ozet-kis-lastik').textContent = kisLastikTextMap[formData.kisLastigi] || 'Var (Dahil)';
+                
+                // Teslim tarihi
+                document.getElementById('ozet-teslim-tarih').textContent = formData.teslimTarihi || '-';
+                
+                // Ek hizmetler
+                const ekHizmetlerListe = document.getElementById('ozet-hizmetler');
+                const ekHizmetlerTutar = document.getElementById('ozet-ek-hizmet-tutar');
+                
+                // Önceki listeyi temizle
+                ekHizmetlerListe.innerHTML = '';
+                
+                if (formData.ekHizmetler.length > 0) {
+                    formData.ekHizmetler.forEach(hizmet => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `
+                            <span>${hizmet.title}</span>
+                            <span>${hizmet.price}</span>
+                        `;
+                        ekHizmetlerListe.appendChild(li);
+                    });
+                    
+                    ekHizmetlerTutar.textContent = `${formData.ekHizmetlerTutar.toLocaleString()} TL`;
+                } else {
+                    const bosMesaj = document.createElement('li');
+                    bosMesaj.className = 'bos-mesaj';
+                    bosMesaj.textContent = 'Seçilen ek hizmet bulunmamaktadır.';
+                    ekHizmetlerListe.appendChild(bosMesaj);
+                    
+                    ekHizmetlerTutar.textContent = '0 TL';
+                }
+            }
+            
+            // Formu gönderme işlemi
+            function submitForm() {
+                if (!formData.onay) {
+                    alert('Lütfen onay kutucuğunu işaretleyin.');
+                    return;
+                }
+                
+                // Verileri sunucuya gönder - Bu örnek için alert ile gösterelim
+                alert('Teklif talebiniz alınmıştır. Kurumsal müşteri temsilcimiz en kısa sürede sizinle iletişime geçecektir.');
+                
+                // Modalı kapat
+                teklifModal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+            
+            // Checkbox'lara tıklama işlemleri ekle
+            const checkboxCards = document.querySelectorAll('.checkbox-card');
+            checkboxCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const checkbox = this.querySelector('.custom-checkbox');
+                    checkbox.checked = !checkbox.checked;
+                    this.classList.toggle('selected', checkbox.checked);
+                });
+            });
+            
+            // Sayı artır/azalt işlemleri
+            const numberInput = document.getElementById('aracAdet');
+            const numberMinus = document.querySelector('.number-minus');
+            const numberPlus = document.querySelector('.number-plus');
+            
+            if (numberMinus && numberPlus && numberInput) {
+                numberMinus.addEventListener('click', () => {
+                    if (parseInt(numberInput.value) > parseInt(numberInput.min)) {
+                        numberInput.value = parseInt(numberInput.value) - 1;
+                    }
+                });
+                
+                numberPlus.addEventListener('click', () => {
+                    if (parseInt(numberInput.value) < parseInt(numberInput.max)) {
+                        numberInput.value = parseInt(numberInput.value) + 1;
+                    }
+                });
+            }
+            
+            // Adım düğmelerine tıklama kontrolü
+            stepItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const step = parseInt(item.getAttribute('data-step'));
+                    if (step < currentStep) {
+                        // Önceki adımlara gitmek için verileri kaydetme
+                        saveCurrentStepData();
+                        goToStep(step);
+                    }
+                });
+            });
+        });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Tab sistemi için gerekli elementleri seç
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabPanes = document.querySelectorAll('.tab-pane');
+
+        // Sayfa yüklendiğinde ilk tab'ı aktif yap
+        function initializeTabs() {
+            tabPanes.forEach(pane => pane.classList.remove('active'));
+            tabButtons.forEach(button => button.classList.remove('active'));
+            
+            // İlk tab'ı aktif yap
+            tabButtons[0].classList.add('active');
+            document.querySelector(`.tab-pane#${tabButtons[0].dataset.tab}`).classList.add('active');
+        }
+
+        // Tab'lar arası geçiş için click event listener ekle
+        tabButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const tabId = this.dataset.tab;
+                
+                // Aktif class'ları kaldır
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabPanes.forEach(pane => pane.classList.remove('active'));
+                
+                // Tıklanan tab'ı aktif yap
+                this.classList.add('active');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+
+        // Sayfa yüklendiğinde tab sistemini başlat
+        initializeTabs();
+    });
+    </script>
+    <script>
+    // Mini Swiper
+    const miniSwiper = new Swiper(".mini-swiper", {
+        spaceBetween: 10,
+        slidesPerView: "auto",
+        freeMode: true,
+        watchSlidesProgress: true,
+    });
+
+    // Ana Swiper
+    const mainSwiper = new Swiper(".main-swiper", {
+        spaceBetween: 10,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: miniSwiper,
+        },
+    });
+    </script>
+</body>
 </html>

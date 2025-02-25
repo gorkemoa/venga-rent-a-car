@@ -809,6 +809,172 @@
     }
 }
 
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.close {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Steps Styles */
+.steps {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.steps::before {
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #eee;
+    z-index: 1;
+}
+
+.step {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    width: 25%;
+    text-align: center;
+}
+
+.step-number {
+    width: 30px;
+    height: 30px;
+    background: #eee;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 5px;
+    color: #666;
+    font-weight: bold;
+}
+
+.step.active .step-number {
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.step-text {
+    font-size: 12px;
+    color: #666;
+}
+
+.step.active .step-text {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Form Navigation */
+.form-navigation {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.btn-prev, .btn-next {
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.btn-prev {
+    background: #eee;
+    border: none;
+    color: #666;
+}
+
+.btn-next {
+    background: var(--primary-color);
+    border: none;
+    color: #fff;
+}
+
+/* Extra Services */
+.extra-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.service-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 4px;
+}
+
+/* Summary */
+.summary {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.important-notice {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff3cd;
+    border: 1px solid #ffeeba;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.important-notice i {
+    color: #856404;
+}
+
+.important-notice p {
+    margin: 0;
+    font-size: 14px;
+    color: #856404;
+}
 </style>
 </head>
 <body>
@@ -953,45 +1119,13 @@
                     <!-- İletişim Kartı -->
                     <div class="contact-card">
                         <div class="contact-header">
-                            <h3>Kiralama Talebi</h3>
+                            <h3>Araç Kiralama</h3>
                             <p>Size özel fiyat teklifimizi hemen iletelim</p>
                         </div>
-                        <form id="rentalRequestForm" onsubmit="return handleSubmit(event)">
-                            <div class="form-group">
-                                <label for="fullname">Ad Soyad</label>
-                                <input type="text" id="fullname" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone">Telefon</label>
-                                <input type="tel" id="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">E-posta</label>
-                                <input type="email" id="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="pickup-date">Alış Tarihi</label>
-                                <input type="date" id="pickup-date" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="rental-duration">Kiralama Süresi</label>
-                                <select id="rental-duration" required>
-                                    <option value="">Süre Seçin</option>
-                                    <option value="1-3">1-3 Gün</option>
-                                    <option value="4-7">4-7 Gün</option>
-                                    <option value="8-14">8-14 Gün</option>
-                                    <option value="15+">15+ Gün</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="notes">Ek Notlar</label>
-                                <textarea id="notes" rows="3" placeholder="Varsa özel isteklerinizi belirtebilirsiniz"></textarea>
-                            </div>
-                            <button type="submit" class="btn-contact">
-                                <i class="fas fa-paper-plane"></i>
-                                <span>Hemen Teklif Al</span>
-                            </button>
-                        </form>
+                        <button class="btn-contact" onclick="openRentalModal()">
+                            <i class="fas fa-car"></i>
+                            <span>Hemen Kirala</span>
+                        </button>
                     </div>
 
                     <!-- Güvenlik Uyarısı -->
@@ -1003,6 +1137,136 @@
             </div>
         </div>
     </main>
+
+    <!-- Kiralama Modal -->
+    <div id="rentalModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Araç Kiralama</h2>
+                <span class="close" onclick="closeRentalModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <!-- Aşama Göstergesi -->
+                <div class="steps">
+                    <div class="step active" data-step="1">
+                        <span class="step-number">1</span>
+                        <span class="step-text">Kişisel Bilgiler</span>
+                    </div>
+                    <div class="step" data-step="2">
+                        <span class="step-number">2</span>
+                        <span class="step-text">Kiralama Detayları</span>
+                    </div>
+                    <div class="step" data-step="3">
+                        <span class="step-number">3</span>
+                        <span class="step-text">Ek Hizmetler</span>
+                    </div>
+                    <div class="step" data-step="4">
+                        <span class="step-number">4</span>
+                        <span class="step-text">Onay</span>
+                    </div>
+                </div>
+
+                <!-- Form Aşamaları -->
+                <form id="rentalForm">
+                    <!-- Aşama 1: Kişisel Bilgiler -->
+                    <div class="form-step" data-step="1">
+                        <div class="form-group">
+                            <label for="fullname">Ad Soyad*</label>
+                            <input type="text" id="fullname" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon*</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-posta*</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="tckn">T.C. Kimlik No*</label>
+                            <input type="text" id="tckn" required maxlength="11">
+                        </div>
+                    </div>
+
+                    <!-- Aşama 2: Kiralama Detayları -->
+                    <div class="form-step" data-step="2" style="display: none;">
+                        <div class="form-group">
+                            <label for="pickup-date">Alış Tarihi*</label>
+                            <input type="date" id="pickup-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="return-date">Dönüş Tarihi*</label>
+                            <input type="date" id="return-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pickup-location">Alış Lokasyonu*</label>
+                            <select id="pickup-location" required>
+                                <option value="">Seçiniz</option>
+                                <option value="airport">Havalimanı</option>
+                                <option value="office">Ofis</option>
+                                <option value="address">Adrese Teslim</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="return-location">Dönüş Lokasyonu*</label>
+                            <select id="return-location" required>
+                                <option value="">Seçiniz</option>
+                                <option value="airport">Havalimanı</option>
+                                <option value="office">Ofis</option>
+                                <option value="address">Adresten Alım</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Aşama 3: Ek Hizmetler -->
+                    <div class="form-step" data-step="3" style="display: none;">
+                        <div class="extra-services">
+                            <div class="service-item">
+                                <input type="checkbox" id="baby-seat">
+                                <label for="baby-seat">Bebek Koltuğu</label>
+                            </div>
+                            <div class="service-item">
+                                <input type="checkbox" id="navigation">
+                                <label for="navigation">Navigasyon</label>
+                            </div>
+                            <div class="service-item">
+                                <input type="checkbox" id="additional-driver">
+                                <label for="additional-driver">Ek Sürücü</label>
+                            </div>
+                            <div class="service-item">
+                                <input type="checkbox" id="wifi">
+                                <label for="wifi">Wi-Fi</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Ek Notlar</label>
+                            <textarea id="notes" rows="3" placeholder="Varsa özel isteklerinizi belirtebilirsiniz"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Aşama 4: Onay -->
+                    <div class="form-step" data-step="4" style="display: none;">
+                        <div class="summary">
+                            <h3>Kiralama Özeti</h3>
+                            <div id="rental-summary">
+                                <!-- JavaScript ile doldurulacak -->
+                            </div>
+                            <div class="important-notice">
+                                <i class="fas fa-info-circle"></i>
+                                <p>Ödeme bilgileri ve detaylı sözleşme müşteri temsilcimiz tarafından tarafınıza iletilecektir.</p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+                <!-- Form Navigasyon Butonları -->
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="prevStep()" style="display: none;">Geri</button>
+                    <button type="button" class="btn-next" onclick="nextStep()">İleri</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
@@ -1026,39 +1290,137 @@
             });
         });
 
-        function handleSubmit(event) {
-            event.preventDefault();
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function openRentalModal() {
+            document.getElementById('rentalModal').style.display = 'block';
+            updateStepDisplay();
+        }
+
+        function closeRentalModal() {
+            document.getElementById('rentalModal').style.display = 'none';
+            currentStep = 1;
+            updateStepDisplay();
+        }
+
+        function updateStepDisplay() {
+            // Aşama göstergelerini güncelle
+            document.querySelectorAll('.step').forEach(step => {
+                const stepNum = parseInt(step.dataset.step);
+                if (stepNum === currentStep) {
+                    step.classList.add('active');
+                } else {
+                    step.classList.remove('active');
+                }
+            });
+
+            // Form aşamalarını göster/gizle
+            document.querySelectorAll('.form-step').forEach(formStep => {
+                const stepNum = parseInt(formStep.dataset.step);
+                formStep.style.display = stepNum === currentStep ? 'block' : 'none';
+            });
+
+            // Navigasyon butonlarını güncelle
+            const prevBtn = document.querySelector('.btn-prev');
+            const nextBtn = document.querySelector('.btn-next');
             
+            prevBtn.style.display = currentStep === 1 ? 'none' : 'block';
+            nextBtn.textContent = currentStep === totalSteps ? 'Tamamla' : 'İleri';
+        }
+
+        function prevStep() {
+            if (currentStep > 1) {
+                currentStep--;
+                updateStepDisplay();
+            }
+        }
+
+        function nextStep() {
+            if (currentStep < totalSteps) {
+                if (validateCurrentStep()) {
+                    currentStep++;
+                    updateStepDisplay();
+                    if (currentStep === totalSteps) {
+                        updateSummary();
+                    }
+                }
+            } else {
+                submitForm();
+            }
+        }
+
+        function validateCurrentStep() {
+            const currentFormStep = document.querySelector(`.form-step[data-step="${currentStep}"]`);
+            const requiredFields = currentFormStep.querySelectorAll('[required]');
+            
+            let isValid = true;
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    field.classList.add('error');
+                    isValid = false;
+                } else {
+                    field.classList.remove('error');
+                }
+            });
+
+            if (!isValid) {
+                alert('Lütfen tüm zorunlu alanları doldurun.');
+            }
+
+            return isValid;
+        }
+
+        function updateSummary() {
+            const summary = document.getElementById('rental-summary');
             const formData = {
-                fullname: $('#fullname').val().trim(),
-                phone: $('#phone').val().trim(),
-                email: $('#email').val().trim(),
-                pickupDate: $('#pickup-date').val(),
-                rentalDuration: $('#rental-duration').val(),
-                notes: $('#notes').val().trim()
+                fullname: document.getElementById('fullname').value,
+                phone: document.getElementById('phone').value,
+                email: document.getElementById('email').value,
+                pickupDate: document.getElementById('pickup-date').value,
+                returnDate: document.getElementById('return-date').value,
+                pickupLocation: document.getElementById('pickup-location').options[document.getElementById('pickup-location').selectedIndex].text,
+                returnLocation: document.getElementById('return-location').options[document.getElementById('return-location').selectedIndex].text
             };
 
-            if (!formData.fullname || !formData.phone || !formData.email || !formData.pickupDate || !formData.rentalDuration) {
-                alert('Lütfen tüm zorunlu alanları doldurun.');
-                return false;
-            }
+            const extraServices = [];
+            document.querySelectorAll('.service-item input[type="checkbox"]:checked').forEach(checkbox => {
+                extraServices.push(checkbox.nextElementSibling.textContent);
+            });
 
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(formData.email)) {
-                alert('Lütfen geçerli bir e-posta adresi girin.');
-                return false;
-            }
+            summary.innerHTML = `
+                <div class="summary-item">
+                    <strong>Kişisel Bilgiler:</strong>
+                    <p>${formData.fullname}<br>${formData.phone}<br>${formData.email}</p>
+                </div>
+                <div class="summary-item">
+                    <strong>Kiralama Detayları:</strong>
+                    <p>Alış Tarihi: ${formData.pickupDate}<br>
+                    Dönüş Tarihi: ${formData.returnDate}<br>
+                    Alış Lokasyonu: ${formData.pickupLocation}<br>
+                    Dönüş Lokasyonu: ${formData.returnLocation}</p>
+                </div>
+                ${extraServices.length > 0 ? `
+                <div class="summary-item">
+                    <strong>Seçilen Ek Hizmetler:</strong>
+                    <p>${extraServices.join(', ')}</p>
+                </div>
+                ` : ''}
+            `;
+        }
 
-            const phoneRegex = /^[0-9]{10,11}$/;
-            if (!phoneRegex.test(formData.phone.replace(/\D/g, ''))) {
-                alert('Lütfen geçerli bir telefon numarası girin.');
-                return false;
-            }
+        function submitForm() {
+            alert('Kiralama talebiniz alınmıştır. Müşteri temsilcimiz en kısa sürede sizinle iletişime geçecektir.');
+            closeRentalModal();
+            document.getElementById('rentalForm').reset();
+        }
 
-            alert('Talebiniz alındı! En kısa sürede size özel teklifimizle iletişime geçeceğiz.');
-            $('#rentalRequestForm')[0].reset();
-            
-            return false;
+        // Modal dışına tıklandığında kapatma
+        window.onclick = function(event) {
+            const modal = document.getElementById('rentalModal');
+            if (event.target === modal) {
+                closeRentalModal();
+            }
         }
     </script>
 </body>

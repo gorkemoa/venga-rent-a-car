@@ -1,0 +1,1124 @@
+:root {
+  /* Ana Renkler */
+  --primary-color: #ff4d00;
+  --primary-light: #ff6b33;
+  --primary-dark: #cc3e00;
+  --secondary-color: #333333;
+  --text-color: #2c2c2c;
+  --text-light: #6e6e6e;
+  --light-gray: #f5f5f5;
+  --border-color: #e5e5e5;
+  --white: #ffffff;
+  
+  /* Font Ailesi */
+  --primary-font: 'Poppins', sans-serif;
+  --heading-font: 'Montserrat', sans-serif;
+  
+  /* Font Boyutları */
+  --h1-size: 2.8rem;
+  --h2-size: 2.2rem;
+  --h3-size: 1.8rem;
+  --body-size: 1rem;
+  --small-size: 0.875rem;
+  
+  /* Boşluklar */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 3rem;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 16px;
+  
+  /* Geçiş Efektleri */
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  
+  /* Gölgeler */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.1);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.15);
+}
+
+/* Genel Stil Sıfırlama */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--primary-font);
+  color: var(--text-color);
+  line-height: 1.6;
+  font-size: var(--body-size);
+  background-color: #fbfbfb;
+}
+
+/* Container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+/* Başlık Stilleri */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--heading-font);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--spacing-sm);
+}
+
+h1 { font-size: var(--h1-size); }
+h2 { font-size: var(--h2-size); }
+h3 { font-size: var(--h3-size); }
+
+/* Buton Stilleri */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  text-decoration: none;
+  transition: all var(--transition-normal);
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  background: transparent;
+}
+
+.btn-outline:hover {
+  background-color: var(--primary-color);
+  color: var(--white);
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 1rem 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
+  background: white;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+}
+
+.breadcrumb a {
+  color: var(--text-light);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--primary-color);
+}
+
+.breadcrumb i {
+  margin: 0 0.5rem;
+  font-size: 0.75rem;
+}
+
+/* Car Detail Styles */
+.car-detail {
+  max-width: 1400px;
+  margin: 2rem auto 4rem;
+  padding: 0 1.5rem;
+}
+
+.car-container {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2.5rem;
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+  border-radius: 24px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+}
+
+/* Swiper Slider */
+.car-image {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Ana Swiper */
+.main-swiper {
+  width: 100%;
+  height: 450px;
+  border-radius: 16px;
+  margin-bottom: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.main-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.main-swiper .swiper-slide:hover img {
+  transform: scale(1.02);
+}
+
+/* Mini Swiper */
+.mini-swiper {
+  height: 100px;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.mini-swiper .swiper-wrapper {
+  gap: 10px;
+}
+
+.mini-swiper .swiper-slide {
+  width: 120px !important;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.6;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.mini-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.mini-swiper .swiper-slide-thumb-active {
+  opacity: 1;
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,77,0,0.1);
+}
+
+/* Swiper Navigasyon Butonları */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  color: var(--primary-color);
+  transition: all 0.3s ease;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: scale(1.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* Car Information */
+.car-info {
+  padding: 1rem;
+}
+
+.car-title {
+  font-size: 2.2rem;
+  color: var(--secondary-color);
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.car-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  border-radius: 2px;
+}
+
+.car-tags {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.tag {
+  padding: 0.6rem 1.2rem;
+  border-radius: 30px;
+  font-size: 0.9rem;
+  background: linear-gradient(to right, #FFE8E0, #FFF8F5);
+  color: var(--primary-color);
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,77,0,0.1);
+}
+
+.tag:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255,77,0,0.1);
+}
+
+.views {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-light);
+  margin-bottom: 1.5rem;
+  background-color: var(--light-gray);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  display: inline-flex;
+}
+
+.views i {
+  color: #4BB4F8;
+}
+
+.car-specs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.2rem;
+  margin: 2rem 0;
+}
+
+.spec-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.8rem;
+  padding: 1.2rem;
+  background: white;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+}
+
+.spec-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+  border-color: var(--primary-color);
+}
+
+.spec-item i {
+  color: var(--primary-color);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.spec-item span {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.price-section {
+  margin-top: 2.5rem;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FFF8F5, #fff);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(255,77,0,0.08);
+  border: 1px solid rgba(255,77,0,0.1);
+}
+
+.price-title {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.price-amount {
+  font-size: 2.8rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  margin: 0.8rem 0;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.price-details, .price-note {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+.price-note {
+  margin-top: 0.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.security-info {
+  margin-top: 2.5rem;
+  padding: 1.8rem;
+  background: linear-gradient(135deg, #f8f9fa, #fff);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.security-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary-color), var(--primary-light));
+}
+
+.security-info h3 {
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.security-info p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.btn-apply {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+.share-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.share-button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  background: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+}
+
+.share-button:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-sm);
+}
+
+.share-button i {
+  color: var(--text-light);
+  font-size: 1.2rem;
+  transition: color var(--transition-fast);
+}
+
+.share-button:hover i {
+  color: var(--primary-color);
+}
+
+/* Tabs System */
+.tabs {
+  margin-top: 3rem;
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border-color);
+  background: linear-gradient(to bottom, #fff, #f8f9fa);
+  padding: 0 1rem;
+}
+
+.tab-btn {
+  padding: 1.2rem 2rem;
+  font-weight: 600;
+  color: var(--text-light);
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary-color), var(--primary-light));
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+}
+
+.tab-btn.active::after {
+  transform: scaleX(1);
+}
+
+.tab-content {
+  padding: 2rem;
+}
+
+.specs-table, .installment-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 0.8rem;
+}
+
+.specs-table td, .installment-table td {
+  padding: 1.2rem;
+  background: #f8f9fa;
+  border-radius: 12px;
+}
+
+.specs-table td:first-child {
+  font-weight: 600;
+  color: var(--secondary-color);
+  background: #f3f4f6;
+}
+
+.installment-table th {
+  background: var(--primary-color);
+  color: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  transition: all var(--transition-normal);
+}
+
+.feature-item:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.feature-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.rental-conditions h3 {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 0.8rem;
+}
+
+.rental-conditions h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: 2px;
+}
+
+.rental-conditions ul {
+  list-style: none;
+}
+
+.rental-conditions li {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--light-gray);
+  border-radius: var(--border-radius-md);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all var(--transition-normal);
+}
+
+.rental-conditions li:hover {
+  background-color: #FFE8E0;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.rental-conditions li i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: none;
+  z-index: 1000;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.lightbox-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.lightbox-prev, .lightbox-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1001;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .car-container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .main-swiper {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .car-detail {
+    padding: 0 1rem;
+    margin: 1rem auto 3rem;
+  }
+  
+  .car-container {
+    padding: 1.5rem;
+  }
+  
+  .car-title {
+    font-size: 1.8rem;
+  }
+  
+  .main-swiper {
+    height: 300px;
+  }
+  
+  .mini-swiper {
+    height: 80px;
+  }
+  
+  .mini-swiper .swiper-slide {
+    width: 100px !important;
+    height: 60px;
+  }
+  
+  .price-amount {
+    font-size: 2.2rem;
+  }
+  
+  .car-specs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .car-tags {
+    flex-direction: column;
+  }
+  
+  .tag {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .price-section {
+    padding: 1.5rem;
+  }
+  
+  .security-info {
+    padding: 1.5rem;
+  }
+  
+  .main-swiper {
+    height: 250px;
+  }
+  
+  .mini-swiper {
+    height: 70px;
+  }
+  
+  .mini-swiper .swiper-slide {
+    width: 80px !important;
+    height: 50px;
+  }
+}
+
+/* Teklif Modal Stili */
+.teklif-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0}
+  to {opacity: 1}
+}
+
+.teklif-modal-content {
+  position: relative;
+  background-color: #fff;
+  margin: 2rem auto;
+  padding: 0;
+  border-radius: var(--border-radius-lg);
+  width: 98%;
+  max-width: 1400px; /* Daha geniş yatay düzen */
+  box-shadow: var(--shadow-lg);
+  max-height: 80vh; /* Daha yatay görünüm için yüksekliği azalt */
+  overflow-y: auto;
+  animation: slideIn 0.3s;
+}
+
+@keyframes slideIn {
+  from {transform: translateY(-50px); opacity: 0;}
+  to {transform: translateY(0); opacity: 1;}
+}
+
+.teklif-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: var(--text-light);
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10;
+  transition: all var(--transition-normal);
+}
+
+.teklif-modal-close:hover {
+  color: var(--primary-color);
+}
+
+.teklif-header {
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.teklif-header h2 {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 1.5rem;
+}
+
+/* Adım göstergesini düzenle */
+.teklif-steps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #f8f9fa;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.step-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+  position: relative;
+  width: auto;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--light-gray);
+  color: var(--text-light);
+  font-weight: 600;
+  border: 2px solid var(--border-color);
+  transition: all var(--transition-normal);
+}
+
+.step-text {
+  font-size: 0.85rem;
+}
+
+.step-line {
+  flex: 1;
+  height: 2px;
+  background-color: var(--border-color);
+  margin: 0 5px;
+}
+
+.step-item.active .step-number {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.step-item.active .step-text {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.step-item.completed .step-number {
+  background-color: #4BB4F8;
+  color: white;
+  border-color: #4BB4F8;
+}
+
+.teklif-car-info {
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.teklif-car-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+/* Yatay düzen için form içeriğini düzenleme */
+.teklif-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Adım içeriklerinin görünürlüğü */
+.step-content {
+  display: none !important;
+  width: 100%;
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  position: absolute;
+  left: -9999px;
+}
+
+.step-content.active {
+  display: block !important;
+  width: 100%;
+  visibility: visible;
+  height: auto;
+  overflow: visible;
+  opacity: 1;
+  position: static;
+}
+
+/* Form alanları için yatay düzen */
+.teklif-form {
+  padding: 1.2rem 2rem;
+  width: 100%;
+  max-width: 100%;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+/* Daha geniş alanlar için düzenleme */
+.form-group {
+  flex: 1;
+  min-width: 220px; /* minimum genişliği belirle */
+}
+
+/* Dikey konumlandırmayı azalt */
+.form-group-title {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 1rem 0 0.8rem;
+  color: var(--primary-color);
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.4rem;
+}
+
+.form-note {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  background-color: #f8f9fa;
+  padding: 0.8rem;
+  border-radius: var(--border-radius-md);
+}
+
+.form-note i {
+  color: var(--primary-color);
+}
+
+.kurumsal-fiyat-bilgi {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1.2rem;
+  background-color: #FFF8F5;
+  border: 1px dashed var(--primary-color);
+  border-radius: var(--border-radius-md);
+}
+
+.kurumsal-fiyat-icon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+}
+
+.kurumsal-fiyat-metin h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+.kurumsal-fiyat-metin p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* Özet sayfası için düzenlemeler */
+#step4 .teklif-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.ozet-bolum {
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: var(--border-radius-md);
+  margin-bottom: 1rem;
+}
+
+.teklif-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--border-color);
+  padding: 1rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.teklif-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background-color: #fff;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Mobile responsive düzenlemeler */
+@media (max-width: 992px) {
+  #step4 .teklif-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #step4 .teklif-form {
+    grid-template-columns: 1fr;
+  }
+  
+  .form-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .teklif-steps {
+    padding: 1rem;
+  }
+  
+  .step-text {
+    display: none;
+  }
+  
+  .teklif-modal-content {
+    width: 95%;
+    margin: 1rem auto;
+  }
+  
+  .teklif-form, .teklif-car-info, .teklif-header, .teklif-price, .teklif-actions {
+    padding: 1rem;
+  }
+}
+
+.tab-pane {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.tab-pane.active {
+    display: block;
+    opacity: 1;
+}
+
+.tab-buttons .tab-btn {
+    padding: 10px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    position: relative;
+    color: #666;
+    transition: color 0.3s ease;
+}
+
+.tab-buttons .tab-btn.active {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.tab-buttons .tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
