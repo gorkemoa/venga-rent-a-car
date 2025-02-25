@@ -21,8 +21,8 @@
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
-    height: 60vh;
-    min-height: 400px;
+    height: 1vh;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -280,8 +280,8 @@
   url('https://img.freepik.com/free-photo/contact-register-feedback-support-help-concept_53876-124243.jpg?t=st=1740408761~exp=1740412361~hmac=1cb80272ff8413eb324e3063b6e8ebc0b4c85596ee03aed86287e741191b4be3&w=1800');">
   <div class="container">
       <div class="hero-content">
-          <h1>Vizyon & Misyon</h1>
-          <p class="subtitle">Size en iyi hizmeti sunmak için çalışıyoruz.</p>
+          <h1>İletişim</h1>
+          <p class="subtitle">Randevu almak için bize ulaşın.</p>
       </div>
   </div>
 </section>
@@ -377,7 +377,7 @@
   
   <!-- Footer (Bozulmadan Yükleniyor) -->
   <div id="footer-container"></div>
-  
+  <script src="assets/js/header.js"></script>
   <script>
     // Header ve Footer bileşenlerini yüklüyoruz
     fetch('components/header.html')
@@ -394,7 +394,7 @@
     // Form gönderim işlemi
     document.getElementById('contactForm').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.');
+      alert('Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.');  
       this.reset();
     });
   </script>

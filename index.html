@@ -12,6 +12,28 @@
   <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/layout.css">
+  
+  <!-- Header JS - Tüm sayfalarda hamburger menü için gerekli -->
+  <script src="assets/js/header.js"></script>
+  
+  <!-- Mobile Optimization -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Tıklama gecikmesini azaltma (mobil dokunma etkileşimlerini hızlandırır)
+      document.body.addEventListener('touchstart', function() {}, {passive: true});
+      
+      // Form kontrollerinin mobil cihazlarda daha iyi çalışmasını sağlama
+      const formControls = document.querySelectorAll('.form-control');
+      formControls.forEach(control => {
+        control.addEventListener('focus', function() {
+          this.parentElement.classList.add('focused');
+        });
+        control.addEventListener('blur', function() {
+          this.parentElement.classList.remove('focused');
+        });
+      });
+    });
+  </script>
 </head>
 <div id="header-container"></div>
 
@@ -83,10 +105,14 @@
           <style>
             .campaign-slider {
               position: relative;
+              width: 100%;
+              overflow: hidden;
             }
             .campaign-slide {
               display: none;
               animation: fade 2s ease-in-out infinite;
+              width: 100%;
+              text-align: center;
             }
             .fade {
               animation: fade 2s ease-in-out infinite;
@@ -98,16 +124,32 @@
             .campaign-slide:first-child {
               display: block;
             }
+            
+            @media (max-width: 768px) {
+              .campaign-slide {
+                font-size: 14px;
+                padding: 0 10px;
+              }
+            }
+            
+            @media (max-width: 576px) {
+              .campaign-slide {
+                font-size: 12px;
+                padding: 0 5px;
+              }
+            }
           </style>
           <script>
-            const slides = document.querySelectorAll('.campaign-slide');
-            let currentSlide = 0;
-            
-            setInterval(() => {
-              slides[currentSlide].style.display = 'none';
-              currentSlide = (currentSlide + 1) % slides.length;
-              slides[currentSlide].style.display = 'block';
-            }, 4000);
+            document.addEventListener('DOMContentLoaded', function() {
+              const slides = document.querySelectorAll('.campaign-slide');
+              let currentSlide = 0;
+              
+              setInterval(() => {
+                slides[currentSlide].style.display = 'none';
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].style.display = 'block';
+              }, 4000);
+            });
           </script>
         </div>
         <div class="key-image-container">
@@ -448,6 +490,59 @@
       .then(data => {
         document.getElementById('footer-container').innerHTML = data;
       });
+      
+    // Mobil uyumluluğu arttırmak için ekstra fonksiyonlar
+    document.addEventListener('DOMContentLoaded', function() {
+      // Kaydırılabilir elemanlar için dokunmatik kaydırma iyileştirmesi
+      const sliders = document.querySelectorAll('.campaign-cars-slider');
+      
+      sliders.forEach(slider => {
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+        
+        slider.addEventListener('touchstart', (e) => {
+          isDown = true;
+          startX = e.touches[0].pageX - slider.offsetLeft;
+          scrollLeft = slider.scrollLeft;
+        });
+        
+        slider.addEventListener('touchend', () => {
+          isDown = false;
+        });
+        
+        slider.addEventListener('touchcancel', () => {
+          isDown = false;
+        });
+        
+        slider.addEventListener('touchmove', (e) => {
+          if(!isDown) return;
+          e.preventDefault();
+          const x = e.touches[0].pageX - slider.offsetLeft;
+          const walk = (x - startX) * 1.5; // Hız çarpanı
+          slider.scrollLeft = scrollLeft - walk;
+        }, { passive: false });
+      });
+      
+      // Sayfanın responsive durumunu kontrol etme
+      function checkResponsive() {
+        if (window.innerWidth <= 768) {
+          // Mobil görünüm için ek düzenlemeler
+          document.querySelectorAll('.search-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+              if (e.target.tagName !== 'A') {
+                const link = this.querySelector('a');
+                if (link) link.click();
+              }
+            });
+          });
+        }
+      }
+      
+      // Sayfa yüklendiğinde ve boyutu değiştiğinde kontrol et
+      checkResponsive();
+      window.addEventListener('resize', checkResponsive);
+    });
   </script>
 </body>
 </html> 

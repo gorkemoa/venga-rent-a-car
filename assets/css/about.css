@@ -40,8 +40,8 @@
     background-size: cover !important;
     background-position: center !important;
     background-attachment: fixed !important;
-    height: 60vh;
-    min-height: 400px;
+    height: 1vh;
+    min-height: 200px;
     display: flex;
     align-items: center;
     justify-content: center;
