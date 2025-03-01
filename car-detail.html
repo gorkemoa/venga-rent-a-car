@@ -12,6 +12,279 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/cardetails.css">
+    <style>
+    /* Modal Styles */
+    .teklif-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .teklif-modal-content {
+        position: relative;
+        background: #fff;
+        width: 95%;
+        max-width: 1400px;
+        height: 90vh;
+        margin: 20px auto;
+        border-radius: 12px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .teklif-header {
+        padding: 1.5rem 2rem;
+        border-bottom: 1px solid #eee;
+    }
+
+    .teklif-header h2 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: var(--primary-color);
+    }
+
+    .teklif-modal-close {
+        position: absolute;
+        right: 1.5rem;
+        top: 1.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #666;
+    }
+
+    .teklif-steps {
+        padding: 1rem 2rem;
+        border-bottom: 1px solid #eee;
+        background: #f8f9fa;
+    }
+
+    .teklif-content {
+        flex: 1;
+        overflow: hidden;
+        position: relative;
+        padding-bottom: 80px; /* Alt bar için boşluk */
+    }
+
+    .step-content {
+        height: 100%;
+        overflow-y: auto;
+        padding: 2rem;
+        display: none;
+    }
+
+    .step-content.active {
+        display: block;
+    }
+
+    /* Form Layout */
+    .teklif-form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .form-row {
+        margin-bottom: 1rem;
+    }
+
+    .form-group-title {
+        grid-column: 1 / -1;
+        margin-top: 1.5rem;
+        padding-bottom: 0.5rem;
+        border-bottom: 2px solid #eee;
+        color: var(--primary-color);
+        font-weight: 600;
+    }
+
+    /* Checkbox Cards Grid */
+    .checkbox-cards-grid {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    /* Fixed Bottom Bar */
+    .teklif-bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(95% - 4rem);
+        max-width: 1360px;
+        background: white;
+        padding: 1rem 2rem;
+        border-top: 1px solid #eee;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+        border-radius: 0 0 12px 12px;
+        z-index: 1000;
+    }
+
+    .teklif-price {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .price-label {
+        font-size: 0.9rem;
+        color: #666;
+        margin-bottom: 0.25rem;
+    }
+
+    .price-amount {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: var(--primary-color);
+    }
+
+    .price-amount span {
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    .teklif-actions {
+        display: flex;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        border: none;
+    }
+
+    /* Summary Page Grid */
+    .ozet-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .ozet-bolum {
+        margin-bottom: 1.5rem;
+    }
+
+    .fiyat-ozeti {
+        grid-column: 1 / -1;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 1200px) {
+        .teklif-form {
+            grid-template-columns: 1fr;
+        }
+        
+        .checkbox-cards-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .ozet-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .teklif-modal-content {
+            width: 100%;
+            height: 100vh;
+            margin: 0;
+            border-radius: 0;
+        }
+        
+        .teklif-bottom-bar {
+            width: 100%;
+            border-radius: 0;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+        }
+        
+        .teklif-price {
+            align-items: center;
+        }
+        
+        .teklif-actions {
+            width: 100%;
+            flex-direction: column;
+        }
+        
+        .btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* Form Element Styles */
+    .form-control {
+        width: 100%;
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 0.9rem;
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+        color: #444;
+    }
+
+    .checkbox-card {
+        padding: 1.25rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .checkbox-card:hover {
+        transform: translateY(-2px);
+    }
+
+    .checkbox-card.selected {
+        border-color: var(--primary-color);
+        background: #f8f9fa;
+    }
+
+    /* Button Styles */
+    .btn {
+        padding: 0.75rem 1.5rem;
+        border-radius: 6px;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background: var(--primary-color);
+        color: white;
+        border: none;
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-color-dark);
+    }
+
+    .btn-geri {
+        background: #f8f9fa;
+        border: 1px solid #ddd;
+        color: #666;
+    }
+
+    .btn-geri:hover {
+        background: #e9ecef;
+    }
+    </style>
     <div id="header-container"></div>
 </head>
 <body>
@@ -21,9 +294,9 @@
         <div class="breadcrumb">
             <a href="index.html">Ana Sayfa</a>
             <i class="fas fa-chevron-right"></i>
-            <a href="cars.html">Araçlar</a>
+            <a href="products-services.html">Araçlar</a>
             <i class="fas fa-chevron-right"></i>
-            <span>HYUNDAI i20 Yıllık Araç Kiralama</span>
+            <span>Ford Tourneo Courier Yıllık Araç Kiralama</span>
         </div>
         
         <div class="car-container">
@@ -70,7 +343,7 @@
                 <div class="image-bottom-content">
                     <div class="security-info">
                         <h3>"0 KM" Aracını Hedef Filo Güvencesiyle Kirala</h3>
-                        <p>Filomingo'dan uzun dönem aracını kiraladıktan sonra, Hedef Filo'nun tüm Türkiye'deki hasar-arıza servis ağından faydalanın; ikame araç, lastik değişimi, HGS gibi hizmetleri Hedef Filo profesyonelliği ile alırsın.</p>
+                        <p>Venga Rent A Car'dan uzun dönem aracını kiraladıktan sonra, Hedef Filo'nun tüm Türkiye'deki hasar-arıza servis ağından faydalanın; ikame araç, lastik değişimi, HGS gibi hizmetleri Hedef Filo profesyonelliği ile alırsın.</p>
                     </div>
 
                     <div class="action-buttons">
@@ -83,7 +356,7 @@
             </div>
 
             <div class="car-info">
-                <h1 class="car-title">HYUNDAI i20 Yıllık Araç Kiralama</h1>
+                <h1 class="car-title">Ford Tourneo Courier Yıllık Araç Kiralama</h1>
                 
                 <div class="car-tags">
                     <span class="tag"><i class="fas fa-bolt"></i> Kampanyalı Araç</span>
@@ -349,7 +622,7 @@
             </div>
             
             <div class="teklif-car-info">
-                <h3>HYUNDAI i20 Yıllık Araç Kiralama</h3>
+                <h3>Yıllık Araç Kiralama</h3>
             </div>
             
             <div class="teklif-content">
@@ -1353,6 +1626,246 @@
         thumbs: {
             swiper: miniSwiper,
         },
+    });
+    </script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        let currentStep = 1;
+        const totalSteps = 4;
+        const btnDevam = document.getElementById('btnDevam');
+        const btnGeri = document.getElementById('btnGeri');
+        
+        // Step gösterme fonksiyonu
+        function showStep(step) {
+            // Tüm step içeriklerini gizle
+            document.querySelectorAll('.step-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            // Tüm step göstergelerini pasif yap
+            document.querySelectorAll('.step-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Aktif step'i göster
+            document.getElementById(`step${step}`).classList.add('active');
+            
+            // Step göstergesini aktif yap
+            document.querySelector(`.step-item[data-step="${step}"]`).classList.add('active');
+            
+            // Önceki step göstergelerini de aktif yap
+            for(let i = 1; i < step; i++) {
+                document.querySelector(`.step-item[data-step="${i}"]`).classList.add('completed');
+            }
+            
+            // Butonları güncelle
+            btnGeri.style.display = step === 1 ? 'none' : 'block';
+            btnDevam.textContent = step === totalSteps ? 'Teklif Oluştur' : 'Devam';
+            btnDevam.innerHTML = step === totalSteps ? 'Teklif Oluştur' : 'Devam <i class="fas fa-arrow-right" style="margin-left: 0.5rem;"></i>';
+        }
+        
+        // İleri butonu
+        btnDevam.addEventListener('click', function() {
+            if (currentStep < totalSteps) {
+                currentStep++;
+                showStep(currentStep);
+                updateSummary(); // Özet bilgilerini güncelle
+            } else {
+                // Son adımda teklif oluşturma işlemi
+                if (document.getElementById('onayCheckbox').checked) {
+                    alert('Teklifiniz başarıyla oluşturuldu! Kurumsal müşteri temsilcimiz sizinle en kısa sürede iletişime geçecektir.');
+                } else {
+                    alert('Lütfen onay kutusunu işaretleyin.');
+                }
+            }
+        });
+        
+        // Geri butonu
+        btnGeri.addEventListener('click', function() {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+        
+        // Özet bilgilerini güncelleme
+        function updateSummary() {
+            if (currentStep === 4) {
+                document.getElementById('ozet-firma-adi').textContent = document.getElementById('firmaAdi').value || '-';
+                document.getElementById('ozet-vergi-bilgisi').textContent = `${document.getElementById('vergiNo').value} / ${document.getElementById('vergiDairesi').value}` || '-';
+                document.getElementById('ozet-yetkili').textContent = document.getElementById('yetkiliAdSoyad').value || '-';
+                document.getElementById('ozet-iletisim').textContent = `${document.getElementById('yetkiliTelefon').value} - ${document.getElementById('yetkiliEposta').value}` || '-';
+                document.getElementById('ozet-vade').textContent = document.getElementById('vade').value + ' Ay' || '-';
+                document.getElementById('ozet-km').textContent = document.getElementById('yillikKm').value + ' KM' || '-';
+                document.getElementById('ozet-adet').textContent = document.getElementById('aracAdet').value || '1';
+                document.getElementById('ozet-renk').textContent = document.getElementById('renk').value || 'Teslimat Aşamasında Belirlenecek';
+                document.getElementById('ozet-teslim-tarih').textContent = document.getElementById('teslimTarihi').value || '-';
+                
+                // Seçilen ek hizmetleri güncelle
+                const hizmetlerList = document.getElementById('ozet-hizmetler');
+                hizmetlerList.innerHTML = '';
+                let ekHizmetTutar = 0;
+                
+                const ekHizmetler = ['ikameArac', 'yolYardim', 'soforHizmet', 'hgs', 'premium', 'filoPlatform'];
+                ekHizmetler.forEach(hizmet => {
+                    const checkbox = document.getElementById(hizmet);
+                    if (checkbox && checkbox.checked) {
+                        const hizmetAdi = checkbox.parentElement.nextElementSibling.querySelector('.checkbox-title span').textContent;
+                        const hizmetFiyat = checkbox.parentElement.nextElementSibling.querySelector('.checkbox-price').textContent;
+                        hizmetlerList.innerHTML += `<li>${hizmetAdi} (${hizmetFiyat})</li>`;
+                        ekHizmetTutar += parseInt(hizmetFiyat.replace(/[^0-9]/g, ''));
+                    }
+                });
+                
+                if (hizmetlerList.children.length === 0) {
+                    hizmetlerList.innerHTML = '<li class="bos-mesaj">Seçilen ek hizmet bulunmamaktadır.</li>';
+                }
+                
+                document.getElementById('ozet-ek-hizmet-tutar').textContent = ekHizmetTutar.toLocaleString('tr-TR') + ' TL';
+            }
+        }
+        
+        // Sayı artırma/azaltma butonları
+        document.querySelectorAll('.number-minus, .number-plus').forEach(button => {
+            button.addEventListener('click', function() {
+                const input = this.parentElement.querySelector('input');
+                const value = parseInt(input.value);
+                if (this.classList.contains('number-minus')) {
+                    if (value > parseInt(input.min)) input.value = value - 1;
+                } else {
+                    if (value < parseInt(input.max)) input.value = value + 1;
+                }
+            });
+        });
+        
+        // İlk adımı göster
+        showStep(1);
+    });
+    </script>
+    <script>
+    // Modal işlemleri
+    const modal = document.getElementById('teklifModal');
+    const modalClose = document.querySelector('.teklif-modal-close');
+    const teklifBtn = document.querySelector('.teklif-btn'); // Teklif butonunuz
+
+    teklifBtn.addEventListener('click', () => {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    });
+
+    modalClose.addEventListener('click', () => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    });
+
+    window.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+    });
+
+    // Sayfa yüklendiğinde modalı gizle
+    document.addEventListener('DOMContentLoaded', () => {
+        modal.style.display = 'none';
+    });
+    </script>
+    <script>
+    // Fiyat hesaplama ve güncelleme fonksiyonları
+    function hesaplaToplamFiyat() {
+        const basePrice = 32440; // Temel araç fiyatı
+        let totalPrice = basePrice;
+        
+        // Araç adedi
+        const aracAdet = parseInt(document.getElementById('aracAdet').value) || 1;
+        
+        // Vade çarpanı
+        const vadeCarpanlari = {
+            '12': 1.1,  // %10 artış
+            '24': 1.05, // %5 artış
+            '36': 1,    // baz fiyat
+            '48': 0.96, // %4 indirim
+            '60': 0.93  // %7 indirim
+        };
+        const vade = document.getElementById('vade').value;
+        const vadeCarpani = vadeCarpanlari[vade] || 1;
+        
+        // KM çarpanı
+        const kmCarpanlari = {
+            '10000': 1,      // baz fiyat
+            '15000': 1.08,   // %8 artış
+            '20000': 1.15,   // %15 artış
+            '25000': 1.22,   // %22 artış
+            '30000': 1.28,   // %28 artış
+            'unlimited': 1.4  // %40 artış
+        };
+        const km = document.getElementById('yillikKm').value;
+        const kmCarpani = kmCarpanlari[km] || 1;
+        
+        // Kasko çarpanı
+        const kaskoCarpanlari = {
+            'fullKasko': 1.1,      // %10 artış
+            'darKapsamli': 1,      // baz fiyat
+            'genisKapsamli': 1.15  // %15 artış
+        };
+        const kasko = document.getElementById('kaskoTercihi').value;
+        const kaskoCarpani = kaskoCarpanlari[kasko] || 1;
+        
+        // Temel fiyat hesaplama
+        totalPrice = basePrice * aracAdet * vadeCarpani * kmCarpani * kaskoCarpani;
+        
+        // Ek hizmetlerin fiyatlarını hesapla
+        let ekHizmetlerToplami = 0;
+        const ekHizmetler = ['ikameArac', 'yolYardim', 'soforHizmet', 'hgs', 'premium', 'filoPlatform'];
+        
+        ekHizmetler.forEach(hizmet => {
+            const checkbox = document.getElementById(hizmet);
+            if (checkbox && checkbox.checked) {
+                const fiyatElement = checkbox.closest('.checkbox-card').querySelector('.checkbox-price');
+                const fiyat = parseInt(fiyatElement.textContent.replace(/[^0-9]/g, ''));
+                ekHizmetlerToplami += fiyat * aracAdet;
+            }
+        });
+        
+        // Toplam fiyatı güncelle
+        const toplamFiyat = totalPrice + ekHizmetlerToplami;
+        document.querySelector('.price-amount').innerHTML = `${Math.round(toplamFiyat).toLocaleString('tr-TR')} <span>TL + KDV</span>`;
+        
+        // Özet sayfasındaki fiyatları güncelle
+        if (document.getElementById('step4').classList.contains('active')) {
+            document.getElementById('ozet-ek-hizmet-tutar').textContent = `${ekHizmetlerToplami.toLocaleString('tr-TR')} TL`;
+            document.querySelector('.ozet-satir.toplam .ozet-deger').textContent = `${Math.round(toplamFiyat).toLocaleString('tr-TR')} TL + KDV`;
+        }
+    }
+
+    // Event listener'ları ekle
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fiyatı etkileyen tüm inputları dinle
+        const fiyatInputlari = ['aracAdet', 'vade', 'yillikKm', 'kaskoTercihi'];
+        fiyatInputlari.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.addEventListener('change', hesaplaToplamFiyat);
+            }
+        });
+        
+        // Ek hizmet checkbox'larını dinle
+        const ekHizmetler = ['ikameArac', 'yolYardim', 'soforHizmet', 'hgs', 'premium', 'filoPlatform'];
+        ekHizmetler.forEach(id => {
+            const element = document.getElementById(id);
+            if (element) {
+                element.addEventListener('change', hesaplaToplamFiyat);
+            }
+        });
+        
+        // Sayı artırma/azaltma butonlarını dinle
+        const numberButtons = document.querySelectorAll('.number-minus, .number-plus');
+        numberButtons.forEach(button => {
+            button.addEventListener('click', hesaplaToplamFiyat);
+        });
+        
+        // İlk yüklemede fiyatı hesapla
+        hesaplaToplamFiyat();
     });
     </script>
 </body>
