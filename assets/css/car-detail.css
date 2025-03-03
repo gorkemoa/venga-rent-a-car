@@ -31,7 +31,7 @@
 }
 
 .breadcrumb a:hover {
-    color: darken(var(--primary-color), 10%);
+    color: #d94000;
 }
 
 .back-link {

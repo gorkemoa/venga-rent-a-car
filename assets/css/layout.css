@@ -352,7 +352,7 @@
 }
 
 .subscribe-btn:hover {
-  background-color: darken(var(--primary-color), 10%);
+  background-color: #d94000;
   transform: translateY(-2px);
 }
 
