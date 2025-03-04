@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
+      
       // Form geçerliyse submit işlemi
       console.log('Form submitted:', {
         pickupLocation,
@@ -64,6 +65,26 @@ document.addEventListener('DOMContentLoaded', () => {
       if (new Date(dropoffDateInput.value) <= selectedPickup) {
         dropoffDateInput.value = minDropoff.toISOString().slice(0, 16);
       }
+    });
+  }
+
+  // Yukarı çık butonu fonksiyonları
+  const scrollToTopBtn = document.querySelector('.scroll-to-top');
+  
+  if (scrollToTopBtn) {
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+      } else {
+        scrollToTopBtn.classList.remove('visible');
+      }
+    });
+    
+    scrollToTopBtn.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
     });
   }
 
@@ -109,3 +130,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 }); 
+

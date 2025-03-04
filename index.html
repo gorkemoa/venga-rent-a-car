@@ -474,6 +474,10 @@
   <!-- Footer -->
   <div id="footer-container"></div>
 
+  <!-- Yukarı Çık Butonu -->
+  <div class="scroll-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </div>
 
   <!-- Scripts -->
   <script src="assets/js/main.js"></script>
@@ -491,9 +495,28 @@
         document.getElementById('footer-container').innerHTML = data;
       });
       
-    // Mobil uyumluluğu arttırmak için ekstra fonksiyonlar
+    // Yukarı çık butonu fonksiyonları
     document.addEventListener('DOMContentLoaded', function() {
-      // Kaydırılabilir elemanlar için dokunmatik kaydırma iyileştirmesi
+      const scrollToTopBtn = document.querySelector('.scroll-to-top');
+      
+      // Sayfa scroll olduğunda butonu göster/gizle
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 300) {
+          scrollToTopBtn.classList.add('visible');
+        } else {
+          scrollToTopBtn.classList.remove('visible');
+        }
+      });
+      
+      // Butona tıklandığında yukarı çık
+      scrollToTopBtn.addEventListener('click', function() {
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+      
+      // Mobil uyumluluğu arttırmak için ekstra fonksiyonlar
       const sliders = document.querySelectorAll('.campaign-cars-slider');
       
       sliders.forEach(slider => {

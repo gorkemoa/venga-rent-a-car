@@ -82,7 +82,7 @@
       font-weight: 600;
       position: relative;
       padding-bottom: 15px;
-      border-bottom: 2px solid #ff4d00;
+      border-bottom: 2px solid var(--primary-color);
       display: inline-block;
     }
     .contact-info-list {
@@ -99,7 +99,7 @@
     .contact-info-icon {
       width: 45px;
       height: 45px;
-      background: #ff4d00;
+      background: var(--primary-color);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -134,7 +134,7 @@
       transition: color 0.3s ease;
     }
     .contact-social-link:hover {
-      color: #ff4d00;
+      color: var(--primary-color);
     }
 
     /* İletişim Formu */
@@ -166,16 +166,16 @@
     }
     .contact-form-group input:focus,
     .contact-form-group textarea:focus {
-      border-color: #ff4d00;
+      border-color: var(--primary-color);
       outline: none;
-      box-shadow: 0 0 0 3px rgba(255, 77, 0, 0.1);
+      box-shadow: 0 0 0 3px rgba(var(--primary-color), 0.1);
     }
     .contact-form-group textarea {
       height: 120px;
       resize: none;
     }
     .contact-submit-btn {
-      background: #ff4d00;
+      background: var(--primary-color);
       color: #fff;
       border: none;
       padding: 12px 30px;
@@ -186,7 +186,7 @@
       transition: all 0.3s ease;
     }
     .contact-submit-btn:hover {
-      background: #e64500;
+      background: var(--primary-color);
       transform: translateY(-2px);
     }
 
@@ -377,6 +377,10 @@
   
   <!-- Footer (Bozulmadan Yükleniyor) -->
   <div id="footer-container"></div>
+  <div class="scroll-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </div>
+  <script src="assets/js/main.js"></script>
   <script src="assets/js/header.js"></script>
   <script>
     // Header ve Footer bileşenlerini yüklüyoruz

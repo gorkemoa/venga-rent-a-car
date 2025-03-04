@@ -1,0 +1,27 @@
+/* Header Navigation Styles */
+.has-submenu {
+    position: relative;
+}
+
+.submenu {
+    list-style-type: disc; /* Noktaları ekler */
+    padding-left: 20px; /* Sol boşluk ekler */
+    margin: 0;
+}
+
+.submenu li {
+    padding: 5px 0;
+    display: list-item; /* Liste öğesi olarak gösterir */
+}
+
+.submenu li a {
+    display: inline-block;
+    vertical-align: middle; /* Dikey hizalama */
+}
+
+/* Mobil görünüm için */
+@media (max-width: 992px) {
+    .submenu {
+        padding-left: 20px; /* Mobilde de aynı boşluğu korur */
+    }
+} 
