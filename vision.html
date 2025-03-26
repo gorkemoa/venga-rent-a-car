@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vizyonumuz - Venga Rent a Car</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .page-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-title h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .page-title .divider {
+            width: 80px;
+            height: 4px;
+            background: var(--primary-color);
+            margin: 0 auto;
+        }
+
+        .content-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .content-section h2 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .content-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .content-section:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 28px;
+            }
+
+            .content-section h2 {
+                font-size: 20px;
+            }
+
+            .content-section p {
+                font-size: 14px;
+            }
+        }
+        .hero-section {
+            position: relative;
+            background-size: cover !important;
+            background-position: center !important;
+            background-attachment: fixed !important;
+            height: 1vh;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .hero-content {
+            text-align: center;
+            color: var(--white);
+            padding: var(--spacing-xl) var(--spacing-md);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-section h1 {
+            font-size: var(--h1-size);
+            margin-bottom: var(--spacing-md);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .hero-section .subtitle {
+            font-size: var(--h3-size);
+            opacity: 0.9;
+            line-height: 1.6;
+            margin-bottom: var(--spacing-lg);
+            animation: fadeInUp 1s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <div id="header-container"></div>
+    <section class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+    url('https://img.freepik.com/free-photo/goals-target-aspiration-perforated-paper-bullseye_53876-16430.jpg?t=st=1740404425~exp=1740408025~hmac=629cb9b7a1edb836fbcfd9b376d45b45bfd6ed98f733edd841529f162f3af308&w=2000');">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Vizyonumuz</h1>
+                <p class="subtitle">Geleceğe dair hedeflerimiz ve planlarımız</p>
+            </div>
+        </div>
+    </section>
+    <div class="page-container">
+        <div class="content-section">
+            <h2>VİZYONUMUZ</h2>
+            <p>Türkiye'nin araç kiralama sektöründe öncü ve güvenilir bir marka olarak, müşterilerimize en kaliteli hizmeti sunmak ve sürdürülebilir büyüme ile sektörde lider konuma ulaşmaktır. Modern ve çevre dostu araç filomuz, yenilikçi çözümlerimiz ve müşteri odaklı yaklaşımımızla, araç kiralama deneyimini yeniden tanımlamayı hedefliyoruz.</p>
+        </div>
+    </div>
+
+    <div id="footer-container"></div>
+    <div class="scroll-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+    <script src="assets/js/header.js"></script>
+    <script src="https://kit.fontawesome.com/d5f2e819d4.js" crossorigin="anonymous"></script>
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Load components
+        fetch('components/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-container').innerHTML = data;
+            });
+
+        fetch('components/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-container').innerHTML = data;
+            });
+    </script>
+</body>
+</html> 
