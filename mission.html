@@ -3,179 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Misyonumuz - Venga Rent a Car</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/layout.css">
+    <title>Misyonumuz - Venga Rent A Car</title>
     <link rel="stylesheet" href="assets/css/style.css">
-    <style>
-        .page-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        .page-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .page-title h1 {
-            font-size: 36px;
-            color: #333;
-            margin-bottom: 20px;
-        }
-
-        .page-title .divider {
-            width: 80px;
-            height: 4px;
-            background: var(--primary-color);
-            margin: 0 auto;
-        }
-
-        .content-section {
-            margin-bottom: 60px;
-            padding: 30px;
-            background: #fff;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-
-        .content-section h2 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 20px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid var(--primary-color);
-        }
-
-        .content-section p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        .mission-list {
-            list-style-type: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .mission-list li {
-            padding: 10px 0;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #666;
-            border-bottom: 1px solid #f0f0f0;
-        }
-
-        .mission-list li:last-child {
-            border-bottom: none;
-        }
-
-        .content-section:hover {
-            transform: translateY(-5px);
-            transition: transform 0.3s ease;
-        }
-
-        @media (max-width: 768px) {
-            .page-title h1 {
-                font-size: 28px;
-            }
-
-            .content-section h2 {
-                font-size: 20px;
-            }
-
-            .content-section p, .mission-list li {
-                font-size: 14px;
-            }
-        }
-        .hero-section {
-            position: relative;
-            background-size: cover !important;
-            background-position: center !important;
-            background-attachment: fixed !important;
-            height: 1vh;
-            min-height: 200px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: var(--spacing-xl);
-        }
-
-        .hero-content {
-            text-align: center;
-            color: var(--white);
-            padding: var(--spacing-xl) var(--spacing-md);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero-section h1 {
-            font-size: var(--h1-size);
-            margin-bottom: var(--spacing-md);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: fadeInDown 1s ease-out;
-        }
-
-        .hero-section .subtitle {
-            font-size: var(--h3-size);
-            opacity: 0.9;
-            line-height: 1.6;
-            margin-bottom: var(--spacing-lg);
-            animation: fadeInUp 1s ease-out;
-        }
-    </style>
+    <link rel="stylesheet" href="assets/css/about.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div id="header-container"></div>
-    <section class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-    url('https://img.freepik.com/free-photo/businessman-standing-front-virtual-screen-with-missions-text_117023-1718.jpg?t=st=1740404425~exp=1740408025~hmac=7975cfa6e96c4b7d17d7f5b6d1fd5a10c9ec9baf0cfaa10aebc4a53aa4e4e574&w=2000');">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Misyonumuz</h1>
-                <p class="subtitle">Müşterilerimize sunduğumuz değerler ve hizmet anlayışımız</p>
+
+    <main>
+        <section class="hero-section" style="background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            url('https://img.freepik.com/free-photo/businesspeople-having-meeting_53876-25060.jpg?t=st=1740503764~exp=1740507364~hmac=a36f34e3bda4e3adf3a9c6c29b45c6daeef58e33bf1f10fbc8be80a1a61a35b0&w=2000');">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Misyonumuz</h1>
+                    <p class="subtitle">Araç Kiralama Hizmetinde Mükemmellik İlkemiz</p>
+                </div>
             </div>
-        </div>
-    </section>
-    <div class="page-container">
-        <div class="content-section">
-            <h2>MİSYONUMUZ</h2>
-            <p>Müşterilerimize güvenli, konforlu ve ekonomik araç kiralama hizmeti sunarak, onların mobilite ihtiyaçlarını en üst düzeyde karşılamaktır. Bunu gerçekleştirirken:</p>
-            <ul class="mission-list">
-                <li>Geniş araç filomuzla her bütçeye uygun seçenekler sunmak</li>
-                <li>7/24 müşteri desteği ile kesintisiz hizmet vermek</li>
-                <li>Şeffaf ve dürüst iş politikası ile müşteri memnuniyetini en üst düzeyde tutmak</li>
-                <li>Teknolojik altyapımızı sürekli geliştirerek hizmet kalitemizi artırmak</li>
-                <li>Çevreye duyarlı ve sürdürülebilir iş modeli oluşturmak</li>
-            </ul>
-        </div>
-    </div>
+        </section>
 
+        <section class="about-content">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h2>Misyonumuz</h2>
+                        <p>Venga Rent A Car olarak misyonumuz, müşterilerimize güvenilir, kaliteli ve erişilebilir araç kiralama hizmeti sunarak seyahat deneyimlerini en üst seviyeye çıkarmaktır. Şeffaf fiyatlandırma politikamız, müşteri odaklı yaklaşımımız ve teknolojik altyapımızla araç kiralama sürecini kolaylaştırmayı hedefliyoruz.</p>
+                        
+                        <p>Sunduğumuz hizmetlerde müşteri memnuniyetini ön planda tutarak:</p>
+                        
+                        <ul style="margin-left: 20px; margin-bottom: 20px; line-height: 1.6;">
+                            <li>Her bütçeye uygun, bakımlı ve güvenli araçlarla hizmet vermeyi,</li>
+                            <li>7/24 kesintisiz müşteri desteği sağlamayı,</li>
+                            <li>Rezervasyon ve kiralama süreçlerini basitleştirmeyi,</li>
+                            <li>Çevre dostu ve ekonomik araç seçenekleri sunmayı,</li>
+                            <li>Sürekli yenilenen araç filomuzla güncel kalmayı</li>
+                        </ul>
+                        
+                        <p>taahhüt ediyoruz. Venga Rent A Car olarak her seyahatinizde güvenilir yol arkadaşınız olmak için çalışıyoruz.</p>
+                    </div>
+                    <div class="about-image">
+                        <img src="https://img.freepik.com/free-photo/group-people-working-out-business-plan-office_1303-15869.jpg?t=st=1740504063~exp=1740507663~hmac=fdab0bec4aa3cc70cc0f2acae5a5f50ff62c9d1d1c46ca38a4c03c73ccd24e8a&w=2000" alt="Venga Rent A Car Misyon">
+                    </div>
+                </div>
+                <div class="features">
+                    <h2 class="section-title">Misyonumuzun Temel Değerleri</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-handshake fa-2x"></i>
+                            </div>
+                            <h4>Güvenilirlik</h4>
+                            <p>Sözümüzü tutar, taahhütlerimizi yerine getiririz</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-heart fa-2x"></i>
+                            </div>
+                            <h4>Müşteri Odaklılık</h4>
+                            <p>Müşterilerimizin ihtiyaçlarını her zaman ön planda tutarız</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-gem fa-2x"></i>
+                            </div>
+                            <h4>Kalite</h4>
+                            <p>Hizmet kalitemizden asla ödün vermeyiz</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-road fa-2x"></i>
+                            </div>
+                            <h4>Erişilebilirlik</h4>
+                            <p>Herkesin bütçesine uygun çözümler sunarız</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
     <div id="footer-container"></div>
-    <div class="scroll-to-top">
-        <i class="fas fa-chevron-up"></i>
-    </div>
-    <script src="assets/js/header.js"></script>
+     <!-- Yukarı Çık Butonu -->
+  <div class="scroll-to-top">
+    <i class="fas fa-chevron-up"></i>
+  </div>
     <script src="https://kit.fontawesome.com/d5f2e819d4.js" crossorigin="anonymous"></script>
-    <script src="assets/js/main.js"></script>
-    <script>
-        // Load components
-        fetch('components/header.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('header-container').innerHTML = data;
-            });
-
-        fetch('components/footer.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('footer-container').innerHTML = data;
-            });
-    </script>
 </body>
+<script src="assets/js/main.js"></script>
+<script src="assets/js/header.js"></script>
+<script>
+  // Load components
+  fetch('components/header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('header-container').innerHTML = data;
+    });
+
+  fetch('components/footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('footer-container').innerHTML = data;
+    });
+</script>
 </html> 
